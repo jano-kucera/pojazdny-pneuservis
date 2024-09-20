@@ -1,0 +1,35 @@
+<div
+    class="nav-container"
+    [class.collapsed]="!expanded"
+>
+    <!-- More toggle -->
+    <a
+        id="toggle"
+        class="nav-item"
+        (click)="expanded = !expanded"
+    >
+        <div>
+            <i class="fa fa-bars"></i>
+        </div>
+    </a>
+
+    <!-- Nav items -->
+    @for (item of items; track $index) {
+    <a
+        class="nav-item"
+        [href]="item.location"
+    >
+        <div>
+            @if(item.icon)
+            {
+            <i
+                class="fa-brands"
+                [class]="item.icon"
+            ></i>
+            }
+            <span>{{item.title}}</span>
+        </div>
+    </a>
+    }
+
+</div>
