@@ -1,19 +1,19 @@
 import { Component } from "@angular/core"
 
-interface NavItem {
+interface NavigationItem {
     icon: string;
     location: string;
     title: string;
 }
 
 @Component({
-    selector: "app-nav",
+    selector: "app-navigation",
     standalone: true,
-    styleUrl: "./app.nav.scss",
-    templateUrl: "./app.nav.html"
+    styleUrl: "./app.navigation.scss",
+    templateUrl: "./app.navigation.html"
 })
-export class AppNavComponent {
-    items: NavItem[] = [
+export class AppNavigationComponent {
+    items: NavigationItem[] = [
         { icon: undefined, location: "#domov", title: "Domov" },
         { icon: undefined, location: "#o-nas", title: "O Nás" },
         { icon: undefined, location: "#sluzby", title: "Služby" },

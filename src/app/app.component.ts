@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AppNavComponent } from './nav/app.nav';
+import { AppNavigationComponent } from './navigation/app.navigation';
 import { AppServicesComponent } from './services/app.services';
 import { AppContactComponent } from './contact/app.contact';
 import { AppGalleryComponent } from './gallery/app.gallery.component';
@@ -10,7 +10,7 @@ import { GallerizeDirective } from 'ng-gallery/lightbox';
     imports: [
         AppContactComponent,
         AppGalleryComponent,
-        AppNavComponent,
+        AppNavigationComponent,
         AppServicesComponent,
         GalleryModule,
         GallerizeDirective,
