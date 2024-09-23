@@ -1,35 +1,54 @@
-<div
-    class="nav-container"
-    [class.collapsed]="!expanded"
+<!-- Mobile nav -->
+<mat-sidenav-container
+    style="right: 0;"
+    [hasBackdrop]="true"
 >
-    <!-- More toggle -->
-    <a
-        id="toggle"
-        class="nav-item"
-        (click)="expanded = !expanded"
+    <mat-sidenav
+        #sidenav
+        mode="over"
+        [fixedInViewport]="true"
+        [position]="'end'"
     >
-        <div>
-            <i class="fa fa-bars"></i>
-        </div>
-    </a>
-
-    <!-- Nav items -->
-    @for (item of items; track $index) {
-    <a
-        class="nav-item"
-        [href]="item.location"
-    >
-        <div>
-            @if(item.icon)
-            {
-            <i
-                class="fa-brands"
-                [class]="item.icon"
-            ></i>
+        @for (link of items; track link) {
+        <button
+            mat-button
+            (click)="scrollTo(link.location); sidenav.close()"
+        >
+            {{link.title}}
+            @if (link.icon) {
+            <i [class]="'fa-brands ' + link.icon"></i>
             }
-            <span>{{item.title}}</span>
-        </div>
+        </button>
+        }
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <button
+            mat-button
+            (click)="sidenav.toggle()"
+        >
+            <i class="fa fa-bars"></i>
+        </button>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- Desktop nav -->
+<nav
+    mat-tab-nav-bar
+    mat-stretch-tabs="false"
+    mat-align-tabs="center"
+    [tabPanel]="tabPanel"
+>
+    @for (link of items; track link) {
+    <a
+        mat-tab-link
+        [href]="link.location"
+    >
+        {{link.title}}
+        @if (link.icon) {
+        <i [class]="'fa-brands ' + link.icon"></i>
+        }
     </a>
     }
-
-</div>
+</nav>
+<mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>

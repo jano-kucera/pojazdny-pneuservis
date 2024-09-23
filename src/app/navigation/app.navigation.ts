@@ -1,4 +1,8 @@
 import { Component } from "@angular/core"
+import { MatButtonModule } from "@angular/material/button";
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { MatTabsModule } from "@angular/material/tabs";
+import { RouterLink } from "@angular/router";
 
 interface NavigationItem {
     icon: string;
@@ -7,12 +11,19 @@ interface NavigationItem {
 }
 
 @Component({
+    imports: [
+        MatButtonModule,
+        MatSidenavModule,
+        MatTabsModule,
+        RouterLink,
+    ],
     selector: "app-navigation",
     standalone: true,
     styleUrl: "./app.navigation.scss",
     templateUrl: "./app.navigation.html"
 })
 export class AppNavigationComponent {
+
     items: NavigationItem[] = [
         { icon: undefined, location: "#domov", title: "Domov" },
         { icon: undefined, location: "#o-nas", title: "O Nás" },
@@ -23,5 +34,7 @@ export class AppNavigationComponent {
         { icon: "fa-instagram", location: "https://www.instagram.com/pojazdnypneuservis/", title: "" }
     ];
 
-    expanded: boolean = false;
+    scrollTo(id: string) {
+        document.querySelector(id)?.scrollIntoView({ block: "center" });
+    }
 }

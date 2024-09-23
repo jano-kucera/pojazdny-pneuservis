@@ -1,17 +1,6 @@
-:host {
-    position: relative;
-    width: 100%;
-    z-index: 10;
-    background: black;
-    display: block;
-    height: 3em;
-    place-items: center;
-    color: white;
-    text-decoration: none !important;
-}
-
-a {
-    text-decoration: none !important;
+nav {
+    --mat-tab-header-label-text-size: 1.1em;
+    background-color: var(--mat-app-background-color);
 }
 
 .fa,
@@ -19,66 +8,41 @@ a {
     font-size: 1.3em;
 }
 
-.nav-container {
-    display: flex;
-    place-items: center;
-    justify-content: center;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    font-size: 1em;
-
-    .nav-item {
-        background: black;
-        height: 100%;
-        text-align: center;
-        padding-right: 1.5em;
-        padding-left: 1.5em;
-        display: grid;
-        place-items: center;
-        color: white;
-        transition: background-color 0.3s, color 0.3s, font-size 0.3s;
-
-        &:hover {
-            background: lightgray;
-            color: black;
-            font-size: 1.2em;
-        }
-    }
-}
-
-#toggle {
+mat-sidenav-container {
     display: none;
-    position: absolute;
-    top: 0;
-    right: 0;
 }
 
 @media (max-width: 641px) {
-    #toggle {
-        display: inline;
-        width: auto;
-        height: auto;
-        cursor: pointer;
-        background-color: transparent;
-    }
-
-    .nav-container {
+    mat-sidenav-container {
+        display: block;
         position: fixed;
-        flex-direction: column;
-        padding: 0;
-        height: auto;
+        z-index: 10;
+        border-radius: 1em;
 
-        .nav-item {
-            padding-top: 0.5em;
-            padding-bottom: 0.5em;
-            width: 100%;
-        }
+        mat-sidenav-content {
+            text-align: right;
 
-        &.collapsed {
-            .nav-item + .nav-item {
-                display: none;
+            button {
+                margin: 0.5em;
             }
         }
+
+        mat-sidenav {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+            button {
+                display: block;
+                width: 80%;
+                position: relative;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+
+    nav {
+        display: none;
     }
 }
