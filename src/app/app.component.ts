@@ -42,12 +42,12 @@ export class AppComponent {
 
 
     imagesRight: GalleryItem[] = [
-        new ImageItem({ src: "odtahovka/1.webp" }),
-        new ImageItem({ src: "odtahovka/2.webp" }),
-        new ImageItem({ src: "odtahovka/3.webp" }),
-        new ImageItem({ src: "odtahovka/4.webp" }),
-        new ImageItem({ src: "odtahovka/5.webp" }),
-        new ImageItem({ src: "odtahovka/6.webp" }),
-        new ImageItem({ src: "odtahovka/7.webp" }),
+        new ImageItem({ src: "odtahovka/compressed/1.webp", thumb: "odtahovka/thumbnails/1.webp" }),
+        new ImageItem({ src: "odtahovka/compressed/2.webp", thumb: "odtahovka/thumbnails/2.webp" }),
+        new ImageItem({ src: "odtahovka/compressed/3.webp", thumb: "odtahovka/thumbnails/3.webp" }),
+        new ImageItem({ src: "odtahovka/compressed/4.webp", thumb: "odtahovka/thumbnails/4.webp" }),
+        new ImageItem({ src: "odtahovka/compressed/5.webp", thumb: "odtahovka/thumbnails/5.webp" }),
+        new ImageItem({ src: "odtahovka/compressed/6.webp", thumb: "odtahovka/thumbnails/6.webp" }),
+        new ImageItem({ src: "odtahovka/compressed/7.webp", thumb: "odtahovka/thumbnails/7.webp" }),
     ];
 }
