@@ -5,15 +5,17 @@ import { AppContactComponent } from './contact/app.contact';
 import { AppGalleryComponent } from './gallery/app.gallery.component';
 import { GalleryItem, GalleryModule, ImageItem } from 'ng-gallery';
 import { GallerizeDirective } from 'ng-gallery/lightbox';
+import { AppPanoramaComponent } from './panorama/app.panorama.component';
 
 @Component({
     imports: [
         AppContactComponent,
         AppGalleryComponent,
         AppNavigationComponent,
+        AppPanoramaComponent,
         AppServicesComponent,
-        GalleryModule,
         GallerizeDirective,
+        GalleryModule,
     ],
     selector: 'app-root',
     standalone: true,
