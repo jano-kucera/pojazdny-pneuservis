@@ -4,6 +4,7 @@
     "scripts": {
         "audit": "npm audit fix",
         "build": "ng build",
+        "deploy": "ng deploy",
         "localtunnel": "lt --port 4200 --subdomain boris",
         "ng": "ng",
         "start": "ng serve --open",
@@ -31,6 +32,7 @@
         "@angular/cli": "^18.2.4",
         "@angular/compiler-cli": "^18.2.0",
         "@types/jasmine": "~5.1.0",
+        "angular-cli-ghpages": "^2.0.1",
         "jasmine-core": "~5.2.0",
         "karma": "~6.4.0",
         "karma-chrome-launcher": "~3.2.0",
