@@ -6,9 +6,11 @@ import { AppGalleryComponent } from './gallery/app.gallery.component';
 import { GalleryItem, GalleryModule, ImageItem } from 'ng-gallery';
 import { GallerizeDirective } from 'ng-gallery/lightbox';
 import { AppPanoramaComponent } from './panorama/app.panorama.component';
+import { AppAboutUsComponent } from './about-us/app.about-us.component';
 
 @Component({
     imports: [
+        AppAboutUsComponent,
         AppContactComponent,
         AppGalleryComponent,
         AppNavigationComponent,
