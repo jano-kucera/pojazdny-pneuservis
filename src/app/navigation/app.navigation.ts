@@ -1,4 +1,5 @@
-import { Component } from "@angular/core"
+import { ViewportScroller } from "@angular/common";
+import { Component, inject } from "@angular/core"
 import { MatButtonModule } from "@angular/material/button";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatTabsModule } from "@angular/material/tabs";
@@ -24,21 +25,23 @@ interface NavigationItem {
 })
 export class AppNavigationComponent {
 
+    viewportScroller = inject(ViewportScroller);
+
     items: NavigationItem[] = [
-        { icon: undefined, location: "#domov", title: "Domov" },
-        { icon: undefined, location: "#o-nas", title: "O Nás" },
-        { icon: undefined, location: "#sluzby", title: "Služby" },
-        { icon: undefined, location: "#kontakt", title: "Kontakt" },
-        { icon: undefined, location: "#galeria", title: "Galéria" },
+        { icon: undefined, location: "domov", title: "Domov" },
+        { icon: undefined, location: "o-nas", title: "O Nás" },
+        { icon: undefined, location: "sluzby", title: "Služby" },
+        { icon: undefined, location: "kontakt", title: "Kontakt" },
+        { icon: undefined, location: "galeria", title: "Galéria" },
         { icon: "fa-facebook", location: "https://www.facebook.com/profile.php?id=100059595616564", title: "" },
         { icon: "fa-instagram", location: "https://www.instagram.com/pojazdnypneuservis/", title: "" }
     ];
 
     goTo(link: NavigationItem) {
-        if (link.location.startsWith("#")) {
-            document.querySelector(link.location)?.scrollIntoView({ block: "center" });
-        } else {
+        if (link.icon) {
             window.location.href = link.location;
+        } else {
+            this.viewportScroller.scrollToAnchor(link.location);
         }
     }
 }

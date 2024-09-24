@@ -43,7 +43,7 @@
     @for (link of items; track link) {
     <a
         mat-tab-link
-        [href]="link.location"
+        (click)="goTo(link)"
     >
         {{link.title}}
         @if (link.icon) {
