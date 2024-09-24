@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { AppNavigationComponent } from './navigation/app.navigation';
 import { AppServicesComponent } from './services/app.services';
 import { AppContactComponent } from './contact/app.contact';
-import { AppGalleryComponent } from './gallery/app.gallery.component';
 import { GalleryItem, GalleryModule, ImageItem } from 'ng-gallery';
 import { GallerizeDirective } from 'ng-gallery/lightbox';
 import { AppPanoramaComponent } from './panorama/app.panorama.component';
@@ -12,7 +11,6 @@ import { AppAboutUsComponent } from './about-us/app.about-us.component';
     imports: [
         AppAboutUsComponent,
         AppContactComponent,
-        AppGalleryComponent,
         AppNavigationComponent,
         AppPanoramaComponent,
         AppServicesComponent,
@@ -39,7 +37,6 @@ export class AppComponent {
         new ImageItem({ src: "servis/compressed/11.webp", thumb: "servis/thumbnails/11.webp" }),
         new ImageItem({ src: "servis/compressed/12.webp", thumb: "servis/thumbnails/12.webp" }),
     ];
-
 
     imagesRight: GalleryItem[] = [
         new ImageItem({ src: "odtahovka/compressed/1.webp", thumb: "odtahovka/thumbnails/1.webp" }),
