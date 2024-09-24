@@ -30,13 +30,19 @@ mat-sidenav-container {
         mat-sidenav {
             display: flex;
             flex-direction: column;
-            height: 100%;
+            width: 100%;
+            height: auto;
+            bottom: unset !important;
 
             button {
                 display: block;
-                width: 80%;
+                width: 100%;
+                font-size: 1.1em;
+                color: var(--mat-sidenav-container-text-color);
                 position: relative;
                 margin-left: auto;
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
                 margin-right: auto;
             }
         }
