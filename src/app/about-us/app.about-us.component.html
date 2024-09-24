@@ -1,17 +1,123 @@
 <h2><b>Pojazdný Pneuservis Martin</b></h2>
 
-<p><b>NONSTOP výjazd k defektom / odťah vozidla</b></p>
+
+<p id="zavolaj">
+    <a
+        mat-raised-button
+        href="tel:+421904123023"
+    >
+        Nečakaj v rade, my prídeme za tebou!
+        <i class="fa fa-phone"></i>
+    </a>
+</p>
+
+<p id="nonstop"><b>NONSTOP výjazd k defektom / odťah vozidla</b></p>
+
+<mat-accordion [displayMode]="'default'">
+    <!-- Komu -->
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <i class="fa fa-car"></i>
+                Komu pomáhame?
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-divider></mat-divider>
+        <mat-list role="list">
+            <mat-list-item role="listitem">
+                <i class="fa fa-caret-right"></i>
+                Vozidlá do 3,5 tony
+            </mat-list-item>
+            <mat-list-item role="listitem">
+                <i class="fa fa-caret-right"></i>
+                4 a viac vozidiel
+            </mat-list-item>
+        </mat-list>
+    </mat-expansion-panel>
+    <!-- Kedy -->
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <i class="fa fa-clock"></i>
+                Kedy vyrazíme?
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-divider></mat-divider>
+        <mat-list role="list">
+            <mat-list-item role="listitem">
+                <i class="fa fa-caret-right"></i>
+                Výjazdy k defektom NONSTOP
+            </mat-list-item>
+            <mat-list-item role="listitem">
+                <i class="fa fa-caret-right"></i>
+                Za každého počasia
+            </mat-list-item>
+            <mat-list-item role="listitem">
+                <i class="fa fa-caret-right"></i>
+                Ktorúkoľvek hodinu
+            </mat-list-item>
+        </mat-list>
+    </mat-expansion-panel>
+    <!-- Ako -->
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <i class="fa fa-wrench"></i>
+                Ako pomôžeme?
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-divider></mat-divider>
+        <mat-list role="list">
+            <mat-list-item role="listitem">
+                <i class="fa fa-caret-right"></i>
+                Bezpečne označíme vozidlo
+            </mat-list-item>
+            <mat-list-item role="listitem">
+                <i class="fa fa-caret-right"></i>
+                Opravíme defekt
+            </mat-list-item>
+            <mat-list-item role="listitem">
+                <i class="fa fa-caret-right"></i>
+                Prípadne zabezpečíme odťah
+            </mat-list-item>
+            <mat-list-item role="listitem">
+                <i class="fa fa-caret-right"></i>
+                Všetky služby nájdeš <b (click)="viewportScroller.scrollToAnchor('sluzby')">dolu</b>
+            </mat-list-item>
+        </mat-list>
+    </mat-expansion-panel>
+    <!-- Kolko -->
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <i class="fa fa-euro"></i>
+                A čo ceny?
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-divider></mat-divider>
+        <mat-list role="list">
+            <mat-list-item role="listitem">
+                <i class="fa fa-caret-right"></i>
+                Ceny riešime individuálne
+            </mat-list-item>
+            <mat-list-item role="listitem">
+                <i class="fa fa-caret-right"></i>
+                Po telefonickej dohode
+            </mat-list-item>
+        </mat-list>
+    </mat-expansion-panel>
+</mat-accordion>
+
 
 <p>
+    Počas nášho pôsobenia na trhu sme získali bohaté skúsenosti v oblasti pneuservisu a výjazdov v
+    teréne. Okrem služieb pneuservisu ponúkame aj odťah nepojazdného vozidla alebo prepravu prostredníctvom
+    autotransportu.
+</p>
+<p>
+    Naším cieľom je vaša bezpečnosť a pohodlie. Preto sa snažíme byť čo najrýchlejší a najefektívnejší. Zavolaj a
+    dohodneme sa.
+</p>
+<p>
     Baví nás pomáhať Vám!
-    <br>
-    Ponúkame služby pojazdného pneuservisu pre vozidlá do 3,5 t, vrátane opráv defektov. V prípade potreby
-    zabezpečíme aj odťah nepojazdného vozidla alebo prepravu prostredníctvom autotransportu. Na trhu pôsobíme už
-    niekoľko rokov a za ten čas sme získali bohaté skúsenosti v oblasti pneuservisu a výjazdov v teréne.
-    <br>
-    Naším prvoradým cieľom je vaša bezpečnosť, preto vždy zabezpečíme dostatočné označenie vášho vozidla 🚨. Sme
-    pripravení prísť kdekoľvek, za každého počasia a v ktorúkoľvek hodinu. Rovnako vám radi pomôžeme aj pri
-    sezónnej výmene pneumatík. Ak nechcete čakať v radoch, ponúkame službu „NEČAKAJ V RADE, MY PRÍDEME ZA
-    TEBOU“, kde sa zameriavame na väčší počet vozidiel (4 a viac). Ceny riešime individuálne po telefonickej
-    dohode.
 </p>
