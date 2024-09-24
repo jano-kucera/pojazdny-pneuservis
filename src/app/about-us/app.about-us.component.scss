@@ -12,7 +12,7 @@
     padding: unset;
 
     a {
-        width: 100%;
+        min-width: min(100%, 600px);
         font-size: 1em;
     }
 }
