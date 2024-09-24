@@ -13,7 +13,7 @@
         @for (link of items; track link) {
         <button
             mat-button
-            (click)="scrollTo(link.location); sidenav.close()"
+            (click)="goTo(link); sidenav.close()"
         >
             {{link.title}}
             @if (link.icon) {

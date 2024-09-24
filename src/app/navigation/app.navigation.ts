@@ -34,7 +34,11 @@ export class AppNavigationComponent {
         { icon: "fa-instagram", location: "https://www.instagram.com/pojazdnypneuservis/", title: "" }
     ];
 
-    scrollTo(id: string) {
-        document.querySelector(id)?.scrollIntoView({ block: "center" });
+    goTo(link: NavigationItem) {
+        if (link.location.startsWith("#")) {
+            document.querySelector(link.location)?.scrollIntoView({ block: "center" });
+        } else {
+            window.location.href = link.location;
+        }
     }
 }
