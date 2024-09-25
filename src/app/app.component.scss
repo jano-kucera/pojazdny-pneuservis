@@ -1,6 +1,6 @@
 .galleries-contact-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, auto);
     align-items: center;
     padding: 1em;
 }
@@ -8,6 +8,6 @@
 @media (max-width: 641px) {
     .galleries-contact-container {
         grid-template-columns: unset;
-        grid-template-rows: 1fr auto 1fr;
+        grid-template-rows: repeat(3, auto);
     }
 }

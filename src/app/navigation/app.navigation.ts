@@ -4,6 +4,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatTabsModule } from "@angular/material/tabs";
 import { RouterLink } from "@angular/router";
+import { AppThemeToggleComponent } from "./theme-toggle/app.theme-toggle.component";
 
 interface NavigationItem {
     icon: string;
@@ -13,6 +14,7 @@ interface NavigationItem {
 
 @Component({
     imports: [
+        AppThemeToggleComponent,
         MatButtonModule,
         MatSidenavModule,
         MatTabsModule,

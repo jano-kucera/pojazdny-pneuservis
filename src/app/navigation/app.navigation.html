@@ -10,6 +10,7 @@
         [fixedInViewport]="true"
         [position]="'end'"
     >
+        <!-- Nav links -->
         @for (link of items; track link) {
         <button
             mat-button
@@ -21,6 +22,14 @@
             }
         </button>
         }
+
+        <!-- Theme toggle -->
+        <button
+            mat-button
+            (click)="sidenavThemeToggle.toggleElementRef.toggle()"
+        >
+            <app-theme-toggle #sidenavThemeToggle></app-theme-toggle>
+        </button>
     </mat-sidenav>
 
     <mat-sidenav-content>
@@ -40,6 +49,7 @@
     mat-align-tabs="center"
     [tabPanel]="tabPanel"
 >
+    <!-- Nav links -->
     @for (link of items; track link) {
     <a
         mat-tab-link
@@ -51,5 +61,13 @@
         }
     </a>
     }
+
+    <!-- Theme toggle -->
+    <a
+        mat-tab-link
+        (click)="navThemeToggle.toggleElementRef.toggle()"
+    >
+        <app-theme-toggle #navThemeToggle></app-theme-toggle>
+    </a>
 </nav>
 <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>

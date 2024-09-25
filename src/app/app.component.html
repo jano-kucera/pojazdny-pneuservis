@@ -1,38 +1,40 @@
-<!-- Nav bar -->
-<app-navigation />
+<mat-sidenav-container>
+    <!-- Nav bar -->
+    <app-navigation />
 
-<!-- Content -->
-<div id="domov">
-    <!-- Panorama -->
-    <app-panorama />
+    <!-- Content -->
+    <div id="domov">
+        <!-- Panorama -->
+        <app-panorama />
 
-    <!-- O nas -->
-    <app-about-us id="o-nas" />
+        <!-- O nas -->
+        <app-about-us id="o-nas" />
 
-    <!-- Sluzby -->
-    <app-services
-        id="sluzby"
-        class="box-shadow"
-    />
-
-    <div class="galleries-contact-container">
-        <gallery
-            id="imagesLeft"
+        <!-- Sluzby -->
+        <app-services
+            id="sluzby"
             class="box-shadow"
-            gallerize
-            [items]="imagesLeft"
-            [imageSize]="'cover'"
         />
 
-        <!-- Kontakt -->
-        <app-contact id="kontakt" />
+        <div class="galleries-contact-container">
+            <gallery
+                id="imagesLeft"
+                class="box-shadow"
+                gallerize
+                [items]="imagesLeft"
+                [imageSize]="'cover'"
+            />
 
-        <!-- Galeria -->
-        <gallery
-            id="imagesRight"
-            class="box-shadow"
-            gallerize
-            [items]="imagesRight"
-        />
+            <!-- Kontakt -->
+            <app-contact id="kontakt" />
+
+            <!-- Galeria -->
+            <gallery
+                id="imagesRight"
+                class="box-shadow"
+                gallerize
+                [items]="imagesRight"
+            />
+        </div>
     </div>
-</div>
+</mat-sidenav-container>

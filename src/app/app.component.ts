@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding, inject } from '@angular/core';
 import { AppNavigationComponent } from './navigation/app.navigation';
 import { AppServicesComponent } from './services/app.services';
 import { AppContactComponent } from './contact/app.contact';
@@ -6,6 +6,8 @@ import { GalleryItem, GalleryModule, ImageItem } from 'ng-gallery';
 import { GallerizeDirective } from 'ng-gallery/lightbox';
 import { AppPanoramaComponent } from './panorama/app.panorama.component';
 import { AppAboutUsComponent } from './about-us/app.about-us.component';
+import { MatSidenavContainer } from '@angular/material/sidenav';
+import { AppThemeService } from './app.theme.service';
 
 @Component({
     imports: [
@@ -16,6 +18,7 @@ import { AppAboutUsComponent } from './about-us/app.about-us.component';
         AppServicesComponent,
         GallerizeDirective,
         GalleryModule,
+        MatSidenavContainer,
     ],
     selector: 'app-root',
     standalone: true,
@@ -23,6 +26,14 @@ import { AppAboutUsComponent } from './about-us/app.about-us.component';
     templateUrl: './app.component.html',
 })
 export class AppComponent {
+
+    appThemeService = inject(AppThemeService);
+
+    @HostBinding('class')
+    get theme() {
+        return this.appThemeService.lightTheme ? "light-theme" : "dark-theme";
+    }
+
     imagesLeft: GalleryItem[] = [
         new ImageItem({ src: "servis/compressed/1.webp", thumb: "servis/thumbnails/1.webp" }),
         new ImageItem({ src: "servis/compressed/2.webp", thumb: "servis/thumbnails/2.webp" }),
