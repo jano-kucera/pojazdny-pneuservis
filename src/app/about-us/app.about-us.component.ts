@@ -1,6 +1,7 @@
 import { ViewportScroller } from "@angular/common";
 import { Component, inject } from "@angular/core";
 import { MatButtonModule } from "@angular/material/button";
+import { MatCardModule } from "@angular/material/card";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { MatListModule } from "@angular/material/list";
 
@@ -8,7 +9,12 @@ import { MatListModule } from "@angular/material/list";
  * About us component.
  */
 @Component({
-    imports: [MatButtonModule, MatExpansionModule, MatListModule],
+    imports: [
+        MatButtonModule,
+        MatCardModule,
+        MatExpansionModule,
+        MatListModule,
+    ],
     selector: "app-about-us",
     standalone: true,
     styleUrl: "./app.about-us.component.scss",

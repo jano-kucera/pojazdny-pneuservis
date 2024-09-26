@@ -21,14 +21,20 @@
     opacity: 0.7;
 }
 
-mat-panel-title {
-    justify-content: center;
-    margin: unset;
-}
+mat-card-content {
+    padding: unset !important;
 
-mat-list-item {
-    b {
-        text-decoration: underline;
+    mat-accordion {
+        mat-panel-title {
+            justify-content: center;
+            margin: unset;
+        }
+
+        mat-list-item {
+            b {
+                text-decoration: underline;
+            }
+        }
     }
 }
 
