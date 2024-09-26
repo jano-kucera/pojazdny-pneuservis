@@ -15,8 +15,8 @@ div {
     gap: 0.5em;
 
     a {
-        text-decoration: none;
         color: inherit;
+        text-decoration: none;
 
         &:hover {
             text-decoration: underline;

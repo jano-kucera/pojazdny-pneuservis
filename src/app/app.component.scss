@@ -7,7 +7,7 @@
 
 @media (max-width: 641px) {
     .galleries-contact-container {
-        grid-template-columns: unset;
         grid-template-rows: repeat(3, auto);
+        grid-template-columns: unset;
     }
 }

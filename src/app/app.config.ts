@@ -1,24 +1,32 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter, withInMemoryScrolling, withRouterConfig } from '@angular/router';
-import { routes } from './app.routes';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { GALLERY_CONFIG, GalleryConfig } from 'ng-gallery';
+import type { ApplicationConfig } from "@angular/core";
+import { provideZoneChangeDetection } from "@angular/core";
+import { provideAnimationsAsync } from "@angular/platform-browser/animations/async";
+import { provideRouter, withInMemoryScrolling } from "@angular/router";
+import type { GalleryConfig } from "ng-gallery";
+import { GALLERY_CONFIG } from "ng-gallery";
+import { routes } from "./app.routes";
 
+/**
+ * Application configuration.
+ */
 export const appConfig: ApplicationConfig = {
     providers: [
         provideZoneChangeDetection({ eventCoalescing: true }),
-        provideRouter(routes, withInMemoryScrolling({ anchorScrolling: 'enabled' })),
+        provideRouter(
+            routes,
+            withInMemoryScrolling({ anchorScrolling: "enabled" }),
+        ),
         provideAnimationsAsync(),
         {
             provide: GALLERY_CONFIG,
             useValue: {
                 autoHeight: true,
-                dots: true,
-                itemAutosize: true,
                 autoPlay: false,
                 counter: true,
+                dots: true,
                 imageSize: "cover",
-            } satisfies GalleryConfig
-        }
-    ]
+                itemAutosize: true,
+            } satisfies GalleryConfig,
+        },
+    ],
 };

@@ -1,7 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
-@Injectable({ providedIn: 'root' })
+/**
+ * Application theme service.
+ */
+@Injectable({ providedIn: "root" })
 export class AppThemeService {
-    lightTheme = window.matchMedia?.('(prefers-color-scheme: light)')?.matches;
+    /** Current theme - defaults to user's preference. */
+    public lightTheme: boolean = window.matchMedia?.(
+        "(prefers-color-scheme: light)",
+    )?.matches;
 }
-

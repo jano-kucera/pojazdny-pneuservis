@@ -1,42 +1,37 @@
 <!-- Mobile nav -->
 <mat-sidenav-container
-    style="right: 0;"
-    [hasBackdrop]="true"
->
+    style="right: 0"
+    [hasBackdrop]="true">
     <mat-sidenav
         #sidenav
         mode="over"
         [autoFocus]="false"
         [fixedInViewport]="true"
-        [position]="'end'"
-    >
+        [position]="'end'">
         <!-- Nav links -->
         @for (link of items; track link) {
-        <button
-            mat-button
-            (click)="goTo(link); sidenav.close()"
-        >
-            {{link.title}}
-            @if (link.icon) {
-            <i [class]="'fa-brands ' + link.icon"></i>
-            }
-        </button>
+            <button
+                mat-button
+                (click)="goTo(link); sidenav.close()">
+                {{ link.title }}
+                @if (link.icon) {
+                    <i [class]="'fa-brands ' + link.icon"></i>
+                }
+            </button>
         }
 
         <!-- Theme toggle -->
         <button
             mat-button
-            (click)="sidenavThemeToggle.toggleElementRef.toggle()"
-        >
-            <app-theme-toggle #sidenavThemeToggle></app-theme-toggle>
+            (click)="sidenavThemeToggle.toggleElementRef.toggle()">
+            <app-theme-toggle #sidenavThemeToggle />
         </button>
     </mat-sidenav>
 
     <mat-sidenav-content>
         <button
             mat-button
-            (click)="sidenav.toggle()"
-        >
+            (click)="sidenav.toggle()">
             <i class="fa fa-bars"></i>
         </button>
     </mat-sidenav-content>
@@ -47,27 +42,26 @@
     mat-tab-nav-bar
     mat-stretch-tabs="false"
     mat-align-tabs="center"
-    [tabPanel]="tabPanel"
->
+    [tabPanel]="tabPanel">
     <!-- Nav links -->
     @for (link of items; track link) {
-    <a
-        mat-tab-link
-        (click)="goTo(link)"
-    >
-        {{link.title}}
-        @if (link.icon) {
-        <i [class]="'fa-brands ' + link.icon"></i>
-        }
-    </a>
+        <a
+            tabindex="0"
+            mat-tab-link
+            (click)="goTo(link)">
+            {{ link.title }}
+            @if (link.icon) {
+                <i [class]="'fa-brands ' + link.icon"></i>
+            }
+        </a>
     }
 
     <!-- Theme toggle -->
     <a
+        tabindex="0"
         mat-tab-link
-        (click)="navThemeToggle.toggleElementRef.toggle()"
-    >
-        <app-theme-toggle #navThemeToggle></app-theme-toggle>
+        (click)="navThemeToggle.toggleElementRef.toggle()">
+        <app-theme-toggle #navThemeToggle />
     </a>
 </nav>
-<mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+<mat-tab-nav-panel #tabPanel />

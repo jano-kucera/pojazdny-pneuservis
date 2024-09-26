@@ -1,10 +1,10 @@
 :host {
-    background-color: var(--mat-app-background-color);
-    color: white;
+    display: block;
     position: relative;
+    background-color: var(--mat-app-background-color);
     padding-top: 1em;
     padding-bottom: 1em;
-    display: block;
+    color: white;
 }
 
 p {
@@ -12,12 +12,12 @@ p {
 }
 
 .image-container {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
     display: block;
     position: relative;
+    margin-right: auto;
+    margin-left: auto;
     padding-top: 1em;
+    width: 80%;
 
     img {
         max-width: 100%;
@@ -25,15 +25,17 @@ p {
     }
 
     .image-description {
+        position: absolute;
+        bottom: 0.5em;
+        opacity: 0.8;
+        transition:
+            opacity 0.5s,
+            font-size 0.5s;
         background: var(--mat-app-background-color);
         padding: 0.5em;
-        position: absolute;
-        font-size: 1.2em;
-        opacity: 0.8;
-        transition: opacity 0.5s, font-size 0.5s;
         width: 100%;
         max-width: 100%;
-        bottom: 0.5em;
+        font-size: 1.2em;
     }
 
     &:hover .image-description {

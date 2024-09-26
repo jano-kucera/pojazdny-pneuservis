@@ -1,17 +1,28 @@
 import { ViewportScroller } from "@angular/common";
-import { Component, inject } from "@angular/core"
+import { Component, inject } from "@angular/core";
 import { MatButtonModule } from "@angular/material/button";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatTabsModule } from "@angular/material/tabs";
 import { RouterLink } from "@angular/router";
 import { AppThemeToggleComponent } from "./theme-toggle/app.theme-toggle.component";
 
+/**
+ * Navigation item definition.
+ */
 interface NavigationItem {
+    /** Icon. */
     icon: string;
+
+    /** Location.*/
     location: string;
+
+    /** Title. */
     title: string;
 }
 
+/**
+ * Navigation component.
+ */
 @Component({
     imports: [
         AppThemeToggleComponent,
@@ -23,22 +34,51 @@ interface NavigationItem {
     selector: "app-navigation",
     standalone: true,
     styleUrl: "./app.navigation.scss",
-    templateUrl: "./app.navigation.html"
+    templateUrl: "./app.navigation.html",
 })
 export class AppNavigationComponent {
+    /** Viewport scroller. */
+    private viewportScroller: ViewportScroller = inject(ViewportScroller);
 
-    viewportScroller = inject(ViewportScroller);
-
-    items: NavigationItem[] = [
-        { icon: undefined, location: "domov", title: "Domov" },
-        { icon: undefined, location: "o-nas", title: "O Nás" },
-        { icon: undefined, location: "sluzby", title: "Služby" },
-        { icon: undefined, location: "kontakt", title: "Kontakt" },
-        { icon: "fa-facebook", location: "https://www.facebook.com/profile.php?id=100059595616564", title: "" },
-        { icon: "fa-instagram", location: "https://www.instagram.com/pojazdnypneuservis/", title: "" }
+    /** Navigation items. */
+    public items: NavigationItem[] = [
+        {
+            icon: undefined,
+            location: "domov",
+            title: "Domov",
+        },
+        {
+            icon: undefined,
+            location: "o-nas",
+            title: "O Nás",
+        },
+        {
+            icon: undefined,
+            location: "sluzby",
+            title: "Služby",
+        },
+        {
+            icon: undefined,
+            location: "kontakt",
+            title: "Kontakt",
+        },
+        {
+            icon: "fa-facebook",
+            location: "https://www.facebook.com/profile.php?id=100059595616564",
+            title: "",
+        },
+        {
+            icon: "fa-instagram",
+            location: "https://www.instagram.com/pojazdnypneuservis/",
+            title: "",
+        },
     ];
 
-    goTo(link: NavigationItem) {
+    /**
+     * Handler for the navigation links clicks.
+     * @param link Navigation link.
+     */
+    public goTo(link: NavigationItem): void {
         if (link.icon) {
             window.location.href = link.location;
         } else {
