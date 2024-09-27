@@ -1,4 +1,5 @@
 import { Component, HostBinding, inject } from "@angular/core";
+import { MatDividerModule } from "@angular/material/divider";
 import { MatSidenavContainer } from "@angular/material/sidenav";
 import type { GalleryItem } from "ng-gallery";
 import { GalleryModule, ImageItem } from "ng-gallery";
@@ -22,6 +23,7 @@ import { AppServicesComponent } from "./services/app.services";
         AppServicesComponent,
         GallerizeDirective,
         GalleryModule,
+        MatDividerModule,
         MatSidenavContainer,
     ],
     selector: "app-root",
