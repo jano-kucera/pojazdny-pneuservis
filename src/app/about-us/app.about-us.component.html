@@ -16,103 +16,26 @@
 <mat-card [appearance]="'outlined'">
     <mat-card-content>
         <mat-accordion [displayMode]="'flat'">
-            <!-- Komu -->
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        <i class="fa fa-car"></i>
-                        Komu pomáhame?
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <mat-divider />
-                <mat-list role="list">
-                    <mat-list-item role="listitem">
-                        <i class="fa fa-caret-right"></i>
-                        Vozidlá do 3,5 tony
-                    </mat-list-item>
-                    <mat-list-item role="listitem">
-                        <i class="fa fa-caret-right"></i>
-                        4 a viac vozidiel
-                    </mat-list-item>
-                </mat-list>
-            </mat-expansion-panel>
-            <!-- Kedy -->
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        <i class="fa fa-clock"></i>
-                        Kedy vyrazíme?
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <mat-divider />
-                <mat-list role="list">
-                    <mat-list-item role="listitem">
-                        <i class="fa fa-caret-right"></i>
-                        Výjazdy k defektom NONSTOP
-                    </mat-list-item>
-                    <mat-list-item role="listitem">
-                        <i class="fa fa-caret-right"></i>
-                        Za každého počasia
-                    </mat-list-item>
-                    <mat-list-item role="listitem">
-                        <i class="fa fa-caret-right"></i>
-                        Ktorúkoľvek hodinu
-                    </mat-list-item>
-                </mat-list>
-            </mat-expansion-panel>
-            <!-- Ako -->
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        <i class="fa fa-wrench"></i>
-                        Ako pomôžeme?
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <mat-divider />
-                <mat-list role="list">
-                    <mat-list-item role="listitem">
-                        <i class="fa fa-caret-right"></i>
-                        Bezpečne označíme vozidlo
-                    </mat-list-item>
-                    <mat-list-item role="listitem">
-                        <i class="fa fa-caret-right"></i>
-                        Opravíme defekt
-                    </mat-list-item>
-                    <mat-list-item role="listitem">
-                        <i class="fa fa-caret-right"></i>
-                        Prípadne zabezpečíme odťah
-                    </mat-list-item>
-                    <mat-list-item role="listitem">
-                        <i class="fa fa-caret-right"></i>
-                        Všetky služby nájdeš
-                        <b
-                            tabindex="-1"
-                            (click)="viewportScroller.scrollToAnchor('sluzby')">
-                            dolu
-                        </b>
-                    </mat-list-item>
-                </mat-list>
-            </mat-expansion-panel>
-            <!-- Kolko -->
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        <i class="fa fa-euro"></i>
-                        A čo ceny?
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <mat-divider />
-                <mat-list role="list">
-                    <mat-list-item role="listitem">
-                        <i class="fa fa-caret-right"></i>
-                        Ceny riešime individuálne
-                    </mat-list-item>
-                    <mat-list-item role="listitem">
-                        <i class="fa fa-caret-right"></i>
-                        Po telefonickej dohode
-                    </mat-list-item>
-                </mat-list>
-            </mat-expansion-panel>
+            @for (item of accordionItems; track $index) {
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <i [class]="'fa ' + item.icon"></i>
+                            {{ item.title }}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-divider />
+                    <mat-list role="list">
+                        @for (subItem of item.subItems; track $index) {
+                            <mat-list-item role="listitem">
+                                <i class="fa fa-caret-right"></i>
+                                {{ subItem.title }}
+                            </mat-list-item>
+                        }
+                    </mat-list>
+                    <mat-divider />
+                </mat-expansion-panel>
+            }
         </mat-accordion>
     </mat-card-content>
 </mat-card>
