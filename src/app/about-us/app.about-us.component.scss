@@ -11,9 +11,11 @@
 #zavolaj {
     padding: unset;
 
-    a {
+    button {
+        --mdc-filled-button-container-height: 4em;
         min-width: min(100%, 600px);
         font-size: 1em;
+        line-height: 1.5em;
     }
 }
 
