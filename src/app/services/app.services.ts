@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
-import { MatTab, MatTabGroup } from "@angular/material/tabs";
+import { MatCardModule } from "@angular/material/card";
+import { MatDividerModule } from "@angular/material/divider";
+import { MatTabsModule } from "@angular/material/tabs";
 import { AppSwipeDirective, SWIPE_DIRECTION } from "./app.swipe.directive";
 
 /**
@@ -20,7 +22,12 @@ interface ServiceItem {
  * Services component.
  */
 @Component({
-    imports: [MatTab, MatTabGroup, AppSwipeDirective],
+    imports: [
+        MatCardModule,
+        MatDividerModule,
+        MatTabsModule,
+        AppSwipeDirective,
+    ],
     selector: "app-services",
     standalone: true,
     styleUrl: "./app.services.scss",

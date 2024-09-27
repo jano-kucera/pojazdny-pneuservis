@@ -13,7 +13,9 @@
 
 <p id="nonstop"><b>NONSTOP výjazd k defektom / odťah vozidla</b></p>
 
-<mat-card [appearance]="'outlined'">
+<mat-card
+    class="box-shadow"
+    [appearance]="'outlined'">
     <mat-card-content>
         <mat-accordion [displayMode]="'flat'">
             @for (item of accordionItems; track $index) {
