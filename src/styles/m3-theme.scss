@@ -31,4 +31,8 @@ html {
         // Use the `-color` mixins to only apply color styles without reapplying the same typography and density styles.
         @include mat.all-component-colors($light-theme);
     }
+
+    mat-card.elevated {
+        @include mat.elevation(2);
+    }
 }

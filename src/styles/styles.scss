@@ -28,11 +28,6 @@ img {
     vertical-align: middle;
 }
 
-// common box shadow for the big page elements
-.box-shadow {
-    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1) !important;
-}
-
 // backdrop to hide side menu
 .mat-drawer-backdrop.mat-drawer-shown {
     position: fixed;
