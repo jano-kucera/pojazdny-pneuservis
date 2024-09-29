@@ -1,5 +1,6 @@
 app-about-us,
-app-services {
+app-services,
+.galleries-contact-container {
     display: block;
     position: relative;
     margin-right: auto;
@@ -11,13 +12,14 @@ app-services {
     display: grid;
     grid-template-columns: repeat(3, auto);
     align-items: center;
-    gap: 1em;
+    gap: 2em;
     padding: 1em;
 }
 
-@media (max-width: 641px) {
+@media (max-width: 768px) {
     .galleries-contact-container {
         grid-template-rows: repeat(3, auto);
         grid-template-columns: unset;
+        gap: 1em;
     }
 }
