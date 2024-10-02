@@ -1,5 +1,4 @@
-import { ViewportScroller } from "@angular/common";
-import { Component, inject } from "@angular/core";
+import { Component } from "@angular/core";
 import { MatButtonModule } from "@angular/material/button";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatTabsModule } from "@angular/material/tabs";
@@ -37,9 +36,6 @@ interface NavigationItem {
     templateUrl: "./app.navigation.html",
 })
 export class AppNavigationComponent {
-    /** Viewport scroller. */
-    private viewportScroller: ViewportScroller = inject(ViewportScroller);
-
     /** Navigation items. */
     public items: NavigationItem[] = [
         {
@@ -82,7 +78,11 @@ export class AppNavigationComponent {
         if (link.icon) {
             window.location.href = link.location;
         } else {
-            this.viewportScroller.scrollToAnchor(link.location);
+            document.getElementById(link.location).scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+                inline: "center",
+            });
         }
     }
 }
