@@ -55,6 +55,11 @@ export class AppServicesComponent {
             title: "Prezutie kolies",
         },
         {
+            description:
+            image: "sluzby/odtah.webp",
+            title: "Odťah vozidla",
+        },
+        {
             description: "Cenník nových pneumatík na požiadanie.",
             image: "sluzby/dodanie.webp",
             title: "Dodanie pneumatík",
