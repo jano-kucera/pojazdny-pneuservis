@@ -1,5 +1,4 @@
-import { ViewportScroller } from "@angular/common";
-import { Component, inject } from "@angular/core";
+import { Component } from "@angular/core";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { MatExpansionModule } from "@angular/material/expansion";
@@ -35,9 +34,6 @@ interface AccordionItem {
     templateUrl: "./app.about-us.component.html",
 })
 export class AppAboutUsComponent {
-    /** Viewport scroller. */
-    public viewportScroller: ViewportScroller = inject(ViewportScroller);
-
     /** Accordion items. */
     public accordionItems: AccordionItem[] = [
         {
