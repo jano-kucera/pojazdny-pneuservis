@@ -13,13 +13,8 @@ div {
     display: flex;
     flex-direction: column;
     gap: 0.5em;
+}
 
-    a {
-        color: inherit;
-        text-decoration: none;
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
+img {
+    max-width: 60%;
 }
