@@ -56,6 +56,7 @@ export class AppServicesComponent {
         },
         {
             description:
+                "Odťah a autotransport pojazdných aj nepojazdných vozidiel.",
             image: "sluzby/odtah.webp",
             title: "Odťah vozidla",
         },
