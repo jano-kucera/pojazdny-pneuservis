@@ -24,7 +24,7 @@ export const appConfig: ApplicationConfig = {
                 autoPlay: false,
                 counter: true,
                 dots: true,
-                imageSize: "contain",
+                imageSize: "cover",
                 itemAutosize: true,
             } satisfies GalleryConfig,
         },

@@ -2,11 +2,11 @@ import { Component, HostBinding, inject } from "@angular/core";
 import { MatDividerModule } from "@angular/material/divider";
 import { MatSidenavContainer } from "@angular/material/sidenav";
 import type { GalleryItem } from "ng-gallery";
-import { GalleryModule, ImageItem } from "ng-gallery";
-import { GallerizeDirective } from "ng-gallery/lightbox";
+import { ImageItem } from "ng-gallery";
 import { AppAboutUsComponent } from "./about-us/app.about-us.component";
 import { AppThemeService } from "./app.theme.service";
 import { AppContactComponent } from "./contact/app.contact";
+import { AppGalleryComponent } from "./gallery/app.gallery.component";
 import { AppNavigationComponent } from "./navigation/app.navigation";
 import { AppPanoramaComponent } from "./panorama/app.panorama.component";
 import { AppServicesComponent } from "./services/app.services";
@@ -18,11 +18,10 @@ import { AppServicesComponent } from "./services/app.services";
     imports: [
         AppAboutUsComponent,
         AppContactComponent,
+        AppGalleryComponent,
         AppNavigationComponent,
         AppPanoramaComponent,
         AppServicesComponent,
-        GallerizeDirective,
-        GalleryModule,
         MatDividerModule,
         MatSidenavContainer,
     ],

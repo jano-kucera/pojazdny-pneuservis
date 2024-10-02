@@ -13,21 +13,20 @@
         <!-- Sluzby -->
         <app-services id="sluzby" />
 
+        <!-- Kontakt a galeria -->
         <div class="galleries-contact-container">
-            <gallery
-                id="imagesLeft"
-                gallerize
-                [items]="imagesLeft"
-                [imageSize]="'cover'" />
+            <!-- Galeria 1 -->
+            <app-gallery
+                [folderName]="'servis'"
+                [imagesCount]="12" />
 
             <!-- Kontakt -->
             <app-contact id="kontakt" />
 
-            <!-- Galeria -->
-            <gallery
-                id="imagesRight"
-                gallerize
-                [items]="imagesRight" />
+            <!-- Galeria 2 -->
+            <app-gallery
+                [folderName]="'odtahovka'"
+                [imagesCount]="7" />
         </div>
     </div>
 </mat-sidenav-container>

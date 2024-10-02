@@ -44,3 +44,10 @@ img {
 .mat-drawer-backdrop.mat-drawer-shown {
     position: fixed;
 }
+
+// gallery cursor
+app-root {
+    gallery-slider {
+        cursor: pointer;
+    }
+}
