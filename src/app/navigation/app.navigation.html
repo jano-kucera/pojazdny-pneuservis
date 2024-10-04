@@ -12,7 +12,7 @@
         @for (link of items; track link) {
             <button
                 mat-button
-                (click)="goTo(link); sidenav.close()">
+                (click)="link.action(); sidenav.close()">
                 {{ link.title }}
                 @if (link.icon) {
                     <i [class]="'fa-brands ' + link.icon"></i>
@@ -48,7 +48,7 @@
         <a
             tabindex="0"
             mat-tab-link
-            (click)="goTo(link)">
+            (click)="link.action()">
             {{ link.title }}
             @if (link.icon) {
                 <i [class]="'fa-brands ' + link.icon"></i>
