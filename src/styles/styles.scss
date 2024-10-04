@@ -1,5 +1,3 @@
-@import "@angular/cdk/overlay-prebuilt.css";
-
 * {
     box-sizing: border-box;
     text-align: center;
@@ -60,4 +58,9 @@ mat-dialog-content {
 
 mat-card-title-group {
     justify-content: center !important;
+}
+
+mat-panel-title {
+    justify-content: center;
+    margin: unset;
 }
