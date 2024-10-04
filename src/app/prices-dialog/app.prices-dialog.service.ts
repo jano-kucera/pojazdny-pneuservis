@@ -21,6 +21,7 @@ export class AppPricesDialogService {
         this.dialog.open(AppPricesDialogComponent, {
             enterAnimationDuration: 200,
             maxWidth: "1000px",
+            minWidth: "450px",
             panelClass: this.appThemeService.lightTheme
                 ? "light-theme"
                 : "dark-theme",

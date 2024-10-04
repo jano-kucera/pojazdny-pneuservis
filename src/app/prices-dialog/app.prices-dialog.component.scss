@@ -1,15 +1,17 @@
-button {
-    place-self: right;
-    font-size: 1rem;
+p {
+    opacity: 0.8;
+    margin: 0;
+    font-size: 0.8rem;
 }
 
-mat-card-content {
+mat-dialog-content {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     padding: 1em !important;
     font-size: 1rem !important;
     --mat-checkbox-label-text-size: 1rem;
+    --mat-standard-button-toggle-label-text-size: 1rem;
 
     .label-value-container {
         display: flex;
@@ -29,5 +31,9 @@ mat-card-content {
     mat-slider {
         margin: unset;
         width: 100%;
+    }
+
+    mat-dialog-actions {
+        padding: 0;
     }
 }

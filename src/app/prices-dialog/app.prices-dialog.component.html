@@ -1,130 +1,78 @@
 <div
     mat-dialog-title
     class="mat-elevation-z5">
-    <span>Cenník</span>
+    <span>Prezutie (4 kolesá)</span>
 </div>
 
 <mat-dialog-content>
-    <!-- Prezutie -->
-    <mat-card [appearance]="'outlined'">
-        <!-- Hlavicka -->
-        <mat-card-header>
-            <mat-card-title-group>
-                <mat-card-title>Prezutie (4 kolesá)</mat-card-title>
-                <mat-card-subtitle style="opacity: 0.8">
-                    Zahŕňa vyváženie diskov, výmenu a hustenie
-                </mat-card-subtitle>
-            </mat-card-title-group>
-        </mat-card-header>
-        <mat-card-content>
-            <!-- Typ auta -->
-            <div class="row">
-                <mat-button-toggle-group
-                    [name]="'carType'"
-                    [hideSingleSelectionIndicator]="true"
-                    [(ngModel)]="carType">
-                    @for (t of carTypes; track $index) {
-                        <mat-button-toggle [value]="t">
-                            {{ t }}
-                        </mat-button-toggle>
-                    }
-                </mat-button-toggle-group>
-            </div>
+    <!-- Typ auta -->
+    <div class="row">
+        <mat-button-toggle-group
+            [name]="'carType'"
+            [hideSingleSelectionIndicator]="true"
+            [(ngModel)]="carType">
+            @for (t of carTypes; track $index) {
+                <mat-button-toggle [value]="t">
+                    {{ t }}
+                </mat-button-toggle>
+            }
+        </mat-button-toggle-group>
+    </div>
 
-            <!-- Komplet -->
-            <div class="row">
-                <mat-button-toggle-group
-                    [name]="'completeChange'"
-                    [hideSingleSelectionIndicator]="true"
-                    [(ngModel)]="completeChange">
-                    <mat-button-toggle [value]="false">
-                        Prehodenie kolies
-                    </mat-button-toggle>
-                    <mat-button-toggle [value]="true">
-                        Kompletné prezutie
-                    </mat-button-toggle>
-                </mat-button-toggle-group>
-            </div>
+    <!-- Komplet -->
+    <div class="row">
+        <mat-button-toggle-group
+            [name]="'completeChange'"
+            [hideSingleSelectionIndicator]="true"
+            [(ngModel)]="completeChange">
+            <mat-button-toggle [value]="false">
+                Prehodenie kolies
+            </mat-button-toggle>
+            <mat-button-toggle [value]="true">
+                Kompletné prezutie
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
 
-            <!-- Disk -->
-            <div class="row">
-                <div class="label-value-container">
-                    <span>Veľkosť diskov:</span>
-                    <span>{{ diskSize }}''</span>
-                </div>
-                <mat-slider
-                    [discrete]="false"
-                    [min]="14"
-                    [max]="22"
-                    [step]="1"
-                    [showTickMarks]="true">
-                    <input
-                        matSliderThumb
-                        [(ngModel)]="diskSize" />
-                </mat-slider>
-            </div>
+    <!-- Disk -->
+    <div class="row">
+        <div class="label-value-container">
+            <span>Veľkosť diskov:</span>
+            <span>{{ diskSize }}''</span>
+        </div>
+        <mat-slider
+            [discrete]="false"
+            [min]="14"
+            [max]="22"
+            [step]="1"
+            [showTickMarks]="true">
+            <input
+                matSliderThumb
+                [(ngModel)]="diskSize" />
+        </mat-slider>
+    </div>
 
-            <!-- Cena -->
+    <!-- Cena -->
+    <mat-divider />
+    <div>
+        <div class="label-value-container">
+            <button mat-flat-button>
+                <b>{{ carType | appPrice: completeChange : diskSize }} €</b>
+            </button>
+        </div>
+        <div>
+            <p>*Zahŕňa vyváženie diskov, výmenu a hustenie</p>
             <mat-divider />
-            <div class="label-value-container">
-                <span>
-                    Cena:
-                    <b>{{ carType | appPrice: completeChange : diskSize }} €</b>
-                </span>
-            </div>
-        </mat-card-content>
-    </mat-card>
+        </div>
+        <mat-divider />
 
-    <!-- Tabulka so sluzbami -->
-    @let columns = ["service", "price"];
-    <table
-        mat-table
-        class="mat-elevation-z2"
-        [dataSource]="tableData">
-        <!-- Sluzba -->
-        <ng-container [matColumnDef]="columns[0]">
-            <th
-                *matHeaderCellDef
-                mat-header-cell>
-                <b>Služba</b>
-            </th>
-            <td
-                *matCellDef="let element"
-                mat-cell>
-                {{ element.service }}
-            </td>
-        </ng-container>
-        <!-- Cena -->
-        <ng-container [matColumnDef]="columns[1]">
-            <th
-                *matHeaderCellDef
-                mat-header-cell>
-                <b>Cena</b>
-            </th>
-            <td
-                *matCellDef="let element"
-                mat-cell>
-                {{ element.price }}
-            </td>
-        </ng-container>
-
-        <!-- Tabulka -->
-        <tr
-            *matHeaderRowDef="columns"
-            mat-header-row>
-        </tr>
-        <tr
-            *matRowDef="let row; columns: columns"
-            mat-row>
-        </tr>
-    </table>
-
-    <!-- Footer -->
-    <mat-dialog-actions>
-        <button
-            mat-button
-            mat-dialog-close>
-            Zavrieť
-        </button>
-    </mat-dialog-actions>
+        <!-- Footer -->
+        <mat-dialog-actions [align]="'center'">
+            <button
+                mat-button
+                mat-dialog-close>
+                Zavrieť
+            </button>
+        </mat-dialog-actions>
+    </div>
 </mat-dialog-content>

@@ -1,8 +1,12 @@
 import { Component } from "@angular/core";
+import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { MatDividerModule } from "@angular/material/divider";
+import { MatExpansionModule } from "@angular/material/expansion";
+import { MatProgressBarModule } from "@angular/material/progress-bar";
 import { MatTabsModule } from "@angular/material/tabs";
 import { AppSwipeDirective, SWIPE_DIRECTION } from "./app.swipe.directive";
+import { AppPricingTableComponent } from "./pricing-table/app.pricing-table.component";
 
 /**
  * Service item definition.
@@ -23,8 +27,12 @@ interface ServiceItem {
  */
 @Component({
     imports: [
+        AppPricingTableComponent,
+        MatButtonModule,
         MatCardModule,
         MatDividerModule,
+        MatExpansionModule,
+        MatProgressBarModule,
         MatTabsModule,
         AppSwipeDirective,
     ],

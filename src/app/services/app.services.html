@@ -29,5 +29,23 @@
                 </mat-tab>
             }
         </mat-tab-group>
+
+        <br />
+        <mat-divider />
     </mat-card-content>
+
+    <!-- Orientacny cennik -->
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header #priceListToggle>
+                <mat-panel-title>Orientačný cenník služieb</mat-panel-title>
+            </mat-expansion-panel-header>
+            <!-- Cennik -->
+            @defer (on interaction(priceListToggle)) {
+                <app-pricing-table />
+            } @loading {
+                <mat-progress-bar mode="indeterminate" />
+            }
+        </mat-expansion-panel>
+    </mat-accordion>
 </mat-card>
