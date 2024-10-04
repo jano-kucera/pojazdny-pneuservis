@@ -1,0 +1,42 @@
+<!-- Tabulka so sluzbami -->
+@let columns = ["service", "price"];
+<table
+    mat-table
+    [dataSource]="tableData">
+    <!-- Sluzba -->
+    <ng-container [matColumnDef]="columns[0]">
+        <th
+            *matHeaderCellDef
+            mat-header-cell>
+            <b>Služba</b>
+        </th>
+        <td
+            *matCellDef="let element"
+            mat-cell>
+            {{ element.service }}
+        </td>
+    </ng-container>
+    <!-- Cena -->
+    <ng-container [matColumnDef]="columns[1]">
+        <th
+            *matHeaderCellDef
+            mat-header-cell>
+            <b>Cena</b>
+        </th>
+        <td
+            *matCellDef="let element"
+            mat-cell>
+            {{ element.price }}
+        </td>
+    </ng-container>
+
+    <!-- Tabulka -->
+    <tr
+        *matHeaderRowDef="columns"
+        mat-header-row>
+    </tr>
+    <tr
+        *matRowDef="let row; columns: columns"
+        mat-row>
+    </tr>
+</table>

@@ -1,19 +1,20 @@
-import { Component } from "@angular/core";
+import { Component, inject } from "@angular/core";
 import { MatButtonModule } from "@angular/material/button";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatTabsModule } from "@angular/material/tabs";
 import { RouterLink } from "@angular/router";
+import { AppPricesDialogService } from "../prices-dialog/app.prices-dialog.service";
 import { AppThemeToggleComponent } from "./theme-toggle/app.theme-toggle.component";
 
 /**
  * Navigation item definition.
  */
 interface NavigationItem {
+    /** Action. */
+    action: () => void;
+
     /** Icon. */
     icon: string;
-
-    /** Location.*/
-    location: string;
 
     /** Title. */
     title: string;
@@ -36,53 +37,75 @@ interface NavigationItem {
     templateUrl: "./app.navigation.html",
 })
 export class AppNavigationComponent {
+    /** Prices dialog service. */
+    private pricesDialogService: AppPricesDialogService = inject(
+        AppPricesDialogService,
+    );
+
     /** Navigation items. */
     public items: NavigationItem[] = [
         {
+            action: (): void => {
+                this.scrollTo("domov");
+            },
             icon: undefined,
-            location: "domov",
             title: "Domov",
         },
         {
+            action: (): void => {
+                this.scrollTo("o-nas");
+            },
             icon: undefined,
-            location: "o-nas",
             title: "O Nás",
         },
         {
+            action: (): void => {
+                this.scrollTo("sluzby");
+            },
             icon: undefined,
-            location: "sluzby",
             title: "Služby",
         },
         {
+            action: (): void => {
+                this.pricesDialogService.openPricesDialog();
+            },
             icon: undefined,
-            location: "kontakt",
+            title: "Cenník",
+        },
+        {
+            action: (): void => {
+                this.scrollTo("kontakt");
+            },
+            icon: undefined,
             title: "Kontakt",
         },
         {
+            action: (): void => {
+                window.location.href =
+                    "https://www.facebook.com/profile.php?id=100059595616564";
+            },
             icon: "fa-facebook",
-            location: "https://www.facebook.com/profile.php?id=100059595616564",
             title: "",
         },
         {
+            action: (): void => {
+                window.location.href =
+                    "https://www.instagram.com/pojazdnypneuservis/";
+            },
             icon: "fa-instagram",
-            location: "https://www.instagram.com/pojazdnypneuservis/",
             title: "",
         },
     ];
 
     /**
-     * Handler for the navigation links clicks.
-     * @param link Navigation link.
+     * Scrolls to the selected link.
+     * @param elementId Element id.
      */
-    public goTo(link: NavigationItem): void {
-        if (link.icon) {
-            window.location.href = link.location;
-        } else {
-            document.getElementById(link.location).scrollIntoView({
-                behavior: "smooth",
-                block: "center",
-                inline: "center",
-            });
-        }
+    private scrollTo(elementId: string): void {
+        document.getElementById(elementId).scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "center",
+        });
     }
 }
