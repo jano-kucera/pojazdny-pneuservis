@@ -40,14 +40,16 @@ export class AppAboutUsComponent {
             icon: "fa-car",
             subItems: [
                 { title: "Pneuservis pre vozidlá do 3,5 tony" },
-                { title: "Sezónne prezúvanie (pre 4 a viac vozidiel)" },
+                {
+                    title: "Sezónne prezúvanie (pre <b class='orange'>4 a viac</b> vozidiel)",
+                },
             ],
             title: "Komu pomáhame?",
         },
         {
             icon: "fa-clock",
             subItems: [
-                { title: "Výjazdy k defektom NONSTOP" },
+                { title: "Výjazdy k defektom <b class='orange'>NONSTOP</b>" },
                 { title: "Za každého počasia" },
                 { title: "Ktorúkoľvek hodinu" },
             ],
