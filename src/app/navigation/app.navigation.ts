@@ -1,9 +1,8 @@
-import { Component, inject } from "@angular/core";
+import { Component } from "@angular/core";
 import { MatButtonModule } from "@angular/material/button";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatTabsModule } from "@angular/material/tabs";
 import { RouterLink } from "@angular/router";
-import { AppPricesDialogService } from "../prices-dialog/app.prices-dialog.service";
 import { AppThemeToggleComponent } from "./theme-toggle/app.theme-toggle.component";
 
 /**
@@ -37,11 +36,6 @@ interface NavigationItem {
     templateUrl: "./app.navigation.html",
 })
 export class AppNavigationComponent {
-    /** Prices dialog service. */
-    private pricesDialogService: AppPricesDialogService = inject(
-        AppPricesDialogService,
-    );
-
     /** Navigation items. */
     public items: NavigationItem[] = [
         {
@@ -64,13 +58,6 @@ export class AppNavigationComponent {
             },
             icon: undefined,
             title: "Služby",
-        },
-        {
-            action: (): void => {
-                this.pricesDialogService.openPricesDialog();
-            },
-            icon: undefined,
-            title: "Cenník",
         },
         {
             action: (): void => {
