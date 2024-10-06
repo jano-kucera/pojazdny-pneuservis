@@ -6,6 +6,8 @@
     padding: unset;
 
     button {
+        --mdc-filled-button-label-text-color: var(--mat-app-background-color);
+        --mdc-filled-button-container-color: #df541c;
         --mdc-filled-button-container-height: 4em;
         min-width: min(100%, 600px);
         font-size: 1.1em;
