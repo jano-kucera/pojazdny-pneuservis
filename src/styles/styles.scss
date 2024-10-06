@@ -4,7 +4,12 @@
     text-wrap: balance;
 }
 
-h1,
+h1 {
+    font-weight: normal;
+    font-family: "Anton";
+    letter-spacing: 0.05em;
+}
+
 h2,
 .mat-mdc-dialog-title {
     font-weight: bold !important;
