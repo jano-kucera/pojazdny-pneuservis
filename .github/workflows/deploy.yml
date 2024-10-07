@@ -19,6 +19,8 @@ jobs:
         steps:
             - name: Checkout Repository
               uses: actions/checkout@v2
+              with:
+                  persist-credentials: true
 
             - name: Adding Node.js
               uses: actions/setup-node@v2
@@ -30,5 +32,3 @@ jobs:
 
             - name: Deploy to GH pages
               run: npm run deploy
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
