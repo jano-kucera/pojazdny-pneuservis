@@ -1,6 +1,8 @@
 :host {
     border-radius: 1em;
     max-width: 1500px;
+    --mdc-tab-indicator-active-indicator-color: var(--mat-app-primary);
+    --mat-tab-header-active-focus-indicator-color: var(--mat-app-primary);
 }
 
 p {

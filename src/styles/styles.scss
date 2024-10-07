@@ -24,6 +24,7 @@ html,
 body {
     height: 100%;
     scroll-behavior: smooth;
+    --mat-app-primary: #df541c;
 }
 
 body {
@@ -45,7 +46,7 @@ img {
 }
 
 .orange {
-    color: #df541c;
+    color: var(--mat-app-primary);
 }
 
 // backdrop to hide side menu
