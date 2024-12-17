@@ -29,7 +29,6 @@ interface AccordionItem {
         MatListModule,
     ],
     selector: "app-about-us",
-    standalone: true,
     styleUrl: "./app.about-us.component.scss",
     templateUrl: "./app.about-us.component.html",
 })

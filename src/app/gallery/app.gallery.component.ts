@@ -9,7 +9,6 @@ import { GallerizeDirective } from "ng-gallery/lightbox";
 @Component({
     imports: [GalleryModule, GallerizeDirective],
     selector: "app-gallery",
-    standalone: true,
     styleUrl: "./app.gallery.component.scss",
     templateUrl: "./app.gallery.component.html",
 })
