@@ -2,7 +2,6 @@ import { Component } from "@angular/core";
 import { MatButtonModule } from "@angular/material/button";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatTabsModule } from "@angular/material/tabs";
-import { RouterLink } from "@angular/router";
 import { AppThemeToggleComponent } from "./theme-toggle/app.theme-toggle.component";
 
 /**
@@ -28,11 +27,10 @@ interface NavigationItem {
         MatButtonModule,
         MatSidenavModule,
         MatTabsModule,
-        RouterLink,
     ],
     selector: "app-navigation",
     styleUrl: "./app.navigation.scss",
-    templateUrl: "./app.navigation.html"
+    templateUrl: "./app.navigation.html",
 })
 export class AppNavigationComponent {
     /** Navigation items. */

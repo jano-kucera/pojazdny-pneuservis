@@ -27,7 +27,7 @@ import { AppServicesComponent } from "./services/app.services";
     ],
     selector: "app-root",
     styleUrl: "./app.component.scss",
-    templateUrl: "./app.component.html"
+    templateUrl: "./app.component.html",
 })
 export class AppComponent {
     /** App theme service. */

@@ -25,7 +25,7 @@ const MOON_SVG =
 @Component({
     imports: [FormsModule, MatSlideToggleModule],
     selector: "app-theme-toggle",
-    templateUrl: "./app.theme-toggle.component.html"
+    templateUrl: "./app.theme-toggle.component.html",
 })
 export class AppThemeToggleComponent implements AfterViewInit {
     /** Renderer. */

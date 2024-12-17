@@ -1,67 +1,67 @@
 {
-  "dependencies": {
-    "@angular/animations": "^19.0.4",
-    "@angular/cdk": "^19.0.3",
-    "@angular/common": "^19.0.4",
-    "@angular/compiler": "^19.0.4",
-    "@angular/core": "^19.0.4",
-    "@angular/forms": "^19.0.4",
-    "@angular/material": "^19.0.3",
-    "@angular/platform-browser": "^19.0.4",
-    "@angular/platform-browser-dynamic": "^19.0.4",
-    "@angular/router": "^19.0.4",
-    "ng-gallery": "^12.0.0",
-    "rxjs": "^7.8.1",
-    "tslib": "^2.8.1",
-    "zone.js": "~0.15.0"
-  },
-  "devDependencies": {
-    "@angular-devkit/build-angular": "^19.0.5",
-    "@angular/cli": "^19.0.5",
-    "@angular/compiler-cli": "^19.0.4",
-    "@types/jasmine": "~5.1.5",
-    "angular-cli-ghpages": "^2.0.3",
-    "eslint-config-angular": "github:jano-kucera/eslint-config-angular#ng19",
-    "jasmine-core": "~5.5.0",
-    "karma": "~6.4.4",
-    "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.2.1",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.6.3"
-  },
-  "eslintConfig": {
-    "extends": "eslint-config-angular",
-    "ignorePatterns": [
-      "node_modules/",
-      "dist/",
-      "public/",
-      "package-lock.json"
-    ]
-  },
-  "name": "pojazdny-pneuservis",
-  "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4.28.1"
-  },
-  "prettier": {
-    "jsonRecursiveSort": true,
-    "multilineArraysWrapThreshold": 3,
-    "plugins": [
-      "prettier-plugin-css-order",
-      "prettier-plugin-sort-json",
-      "prettier-plugin-multiline-arrays"
-    ]
-  },
-  "private": true,
-  "scripts": {
-    "build": "ng build",
-    "deploy": "ng deploy",
-    "lint": "npx eslint \"**/*.{ts,html}\" --fix && prettier --write \"**/*.{json,scss}\" --log-level silent",
-    "ng": "ng",
-    "start": "ng serve --open",
-    "update-eslint": "npm install jano-kucera/eslint-config-angular",
-    "update-packages": "npx npm-check-updates --interactive --format group",
-    "watch": "ng build --watch --configuration development"
-  },
-  "version": "0.0.0"
+    "dependencies": {
+        "@angular/animations": "^19.0.4",
+        "@angular/cdk": "^19.0.3",
+        "@angular/common": "^19.0.4",
+        "@angular/compiler": "^19.0.4",
+        "@angular/core": "^19.0.4",
+        "@angular/forms": "^19.0.4",
+        "@angular/material": "^19.0.3",
+        "@angular/platform-browser": "^19.0.4",
+        "@angular/platform-browser-dynamic": "^19.0.4",
+        "@angular/router": "^19.0.4",
+        "ng-gallery": "^12.0.0",
+        "rxjs": "^7.8.1",
+        "tslib": "^2.8.1",
+        "zone.js": "~0.15.0"
+    },
+    "devDependencies": {
+        "@angular-devkit/build-angular": "^19.0.5",
+        "@angular/cli": "^19.0.5",
+        "@angular/compiler-cli": "^19.0.4",
+        "@types/jasmine": "~5.1.5",
+        "angular-cli-ghpages": "^2.0.3",
+        "eslint-config-angular": "github:jano-kucera/eslint-config-angular#2bb6e22a704e62d04b1aec94248840a0c80395fd",
+        "jasmine-core": "~5.5.0",
+        "karma": "~6.4.4",
+        "karma-chrome-launcher": "~3.2.0",
+        "karma-coverage": "~2.2.1",
+        "karma-jasmine": "~5.1.0",
+        "karma-jasmine-html-reporter": "~2.1.0",
+        "typescript": "~5.6.3"
+    },
+    "eslintConfig": {
+        "extends": "eslint-config-angular",
+        "ignorePatterns": [
+            "node_modules/",
+            "dist/",
+            "public/",
+            "package-lock.json"
+        ]
+    },
+    "name": "pojazdny-pneuservis",
+    "optionalDependencies": {
+        "@rollup/rollup-linux-x64-gnu": "^4.28.1"
+    },
+    "prettier": {
+        "jsonRecursiveSort": true,
+        "multilineArraysWrapThreshold": 3,
+        "plugins": [
+            "prettier-plugin-css-order",
+            "prettier-plugin-sort-json",
+            "prettier-plugin-multiline-arrays"
+        ]
+    },
+    "private": true,
+    "scripts": {
+        "build": "ng build",
+        "deploy": "ng deploy",
+        "lint": "npx eslint \"**/*.{ts,html}\" --fix && prettier --write \"**/*.{json,scss}\" --log-level silent",
+        "ng": "ng",
+        "start": "ng serve --open",
+        "update-eslint": "npm install jano-kucera/eslint-config-angular",
+        "update-packages": "npx npm-check-updates --interactive --format group",
+        "watch": "ng build --watch --configuration development"
+    },
+    "version": "0.0.0"
 }

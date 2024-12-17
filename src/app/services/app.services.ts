@@ -34,7 +34,7 @@ interface ServiceItem {
     ],
     selector: "app-services",
     styleUrl: "./app.services.scss",
-    templateUrl: "./app.services.html"
+    templateUrl: "./app.services.html",
 })
 export class AppServicesComponent {
     /** Selected tab index. */

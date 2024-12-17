@@ -30,7 +30,7 @@ interface AccordionItem {
     ],
     selector: "app-about-us",
     styleUrl: "./app.about-us.component.scss",
-    templateUrl: "./app.about-us.component.html"
+    templateUrl: "./app.about-us.component.html",
 })
 export class AppAboutUsComponent {
     /** Accordion items. */

@@ -10,7 +10,7 @@ import { GallerizeDirective } from "ng-gallery/lightbox";
     imports: [GalleryModule, GallerizeDirective],
     selector: "app-gallery",
     styleUrl: "./app.gallery.component.scss",
-    templateUrl: "./app.gallery.component.html"
+    templateUrl: "./app.gallery.component.html",
 })
 export class AppGalleryComponent implements OnInit {
     /** Gallery instances counter. */
