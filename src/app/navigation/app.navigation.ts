@@ -31,9 +31,8 @@ interface NavigationItem {
         RouterLink,
     ],
     selector: "app-navigation",
-    standalone: true,
     styleUrl: "./app.navigation.scss",
-    templateUrl: "./app.navigation.html",
+    templateUrl: "./app.navigation.html"
 })
 export class AppNavigationComponent {
     /** Navigation items. */

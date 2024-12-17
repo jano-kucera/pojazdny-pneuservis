@@ -33,9 +33,8 @@ interface ServiceItem {
         AppSwipeDirective,
     ],
     selector: "app-services",
-    standalone: true,
     styleUrl: "./app.services.scss",
-    templateUrl: "./app.services.html",
+    templateUrl: "./app.services.html"
 })
 export class AppServicesComponent {
     /** Selected tab index. */
