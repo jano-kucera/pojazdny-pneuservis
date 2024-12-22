@@ -21,7 +21,7 @@
         "@angular/compiler-cli": "^19.0.4",
         "@types/jasmine": "~5.1.5",
         "angular-cli-ghpages": "^2.0.3",
-        "eslint-config-angular": "github:jano-kucera/eslint-config-angular#28f7d85eef3a65b6fdd1fa88ffaeae52886347b6",
+        "eslint-config-angular": "github:jano-kucera/eslint-config-angular#c7e4e5b540cb619251559fae87b480ccc6a523eb",
         "jasmine-core": "~5.5.0",
         "karma": "~6.4.4",
         "karma-chrome-launcher": "~3.2.0",
