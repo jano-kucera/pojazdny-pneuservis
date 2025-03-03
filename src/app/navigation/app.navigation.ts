@@ -65,16 +65,14 @@ export class AppNavigationComponent {
         },
         {
             action: (): void => {
-                window.location.href =
-                    "https://www.facebook.com/profile.php?id=100059595616564";
+                window.location.href = "https://www.facebook.com/profile.php?id=100059595616564";
             },
             icon: "fa-facebook",
             title: "",
         },
         {
             action: (): void => {
-                window.location.href =
-                    "https://www.instagram.com/pojazdnypneuservis/";
+                window.location.href = "https://www.instagram.com/pojazdnypneuservis/";
             },
             icon: "fa-instagram",
             title: "",

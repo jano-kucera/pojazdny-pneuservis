@@ -9,6 +9,7 @@
     },
     "compileOnSave": false,
     "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
         "declaration": false,
         "esModuleInterop": true,
         "experimentalDecorators": true,

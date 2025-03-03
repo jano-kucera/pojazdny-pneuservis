@@ -1,16 +1,7 @@
-import type { AfterViewInit } from "@angular/core";
-import {
-    Component,
-    HostListener,
-    inject,
-    Renderer2,
-    ViewChild,
-} from "@angular/core";
+import type { AfterViewInit, Signal } from "@angular/core";
+import { Component, HostListener, inject, Renderer2, viewChild } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import {
-    MatSlideToggle,
-    MatSlideToggleModule,
-} from "@angular/material/slide-toggle";
+import { MatSlideToggle, MatSlideToggleModule } from "@angular/material/slide-toggle";
 import { AppThemeService } from "../../app.theme.service";
 
 const SUN_SVG =
@@ -35,30 +26,22 @@ export class AppThemeToggleComponent implements AfterViewInit {
     public appThemeService: AppThemeService = inject(AppThemeService);
 
     /** Child MatSlideToggle component. */
-    @ViewChild(MatSlideToggle)
-    public toggleElementRef: MatSlideToggle;
+    public readonly toggleElementRef: Signal<MatSlideToggle> = viewChild(MatSlideToggle);
 
     /**
      * After view init lifecycle hook.
      */
     public ngAfterViewInit(): void {
         // setup the SVG icons for the toggle
-        if (this.toggleElementRef) {
+        const toggleElementRef = this.toggleElementRef();
+        if (toggleElementRef) {
             this.renderer.setAttribute(
-                this.toggleElementRef._switchElement.nativeElement.querySelector(
-                    ".mdc-switch__icon--off",
-                ).firstChild,
+                toggleElementRef._switchElement.nativeElement.querySelector(".mdc-switch__icon--off").firstChild,
                 "d",
                 MOON_SVG,
             );
 
-            this.renderer.setAttribute(
-                this.toggleElementRef._switchElement.nativeElement.querySelector(
-                    ".mdc-switch__icon--on",
-                ).firstChild,
-                "d",
-                SUN_SVG,
-            );
+            this.renderer.setAttribute(toggleElementRef._switchElement.nativeElement.querySelector(".mdc-switch__icon--on").firstChild, "d", SUN_SVG);
         }
     }
 

@@ -58,8 +58,7 @@ export class AppServicesComponent {
             title: "Prezutie kolies",
         },
         {
-            description:
-                "Odťah a autotransport pojazdných aj nepojazdných vozidiel.",
+            description: "Odťah a autotransport pojazdných aj nepojazdných vozidiel.",
             image: "sluzby/odtah.webp",
             title: "Odťah vozidla",
         },

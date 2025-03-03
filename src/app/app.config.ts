@@ -12,10 +12,7 @@ import { routes } from "./app.routes";
 export const appConfig: ApplicationConfig = {
     providers: [
         provideZoneChangeDetection({ eventCoalescing: true }),
-        provideRouter(
-            routes,
-            withInMemoryScrolling({ anchorScrolling: "enabled" }),
-        ),
+        provideRouter(routes, withInMemoryScrolling({ anchorScrolling: "enabled" })),
         provideAnimationsAsync(),
         {
             provide: GALLERY_CONFIG,

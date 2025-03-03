@@ -23,7 +23,7 @@
         <!-- Theme toggle -->
         <button
             mat-button
-            (click)="sidenavThemeToggle.toggleElementRef.toggle()">
+            (click)="sidenavThemeToggle.toggleElementRef().toggle()">
             <app-theme-toggle #sidenavThemeToggle />
         </button>
     </mat-sidenav>
@@ -60,7 +60,7 @@
     <a
         tabindex="0"
         mat-tab-link
-        (click)="navThemeToggle.toggleElementRef.toggle()">
+        (click)="navThemeToggle.toggleElementRef().toggle()">
         <app-theme-toggle #navThemeToggle />
     </a>
 </nav>

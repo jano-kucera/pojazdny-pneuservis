@@ -1,4 +1,5 @@
-import { Directive, EventEmitter, HostListener, Output } from "@angular/core";
+import type { OutputEmitterRef } from "@angular/core";
+import { Directive, HostListener, output } from "@angular/core";
 
 /**
  * Swipe direction.
@@ -23,9 +24,7 @@ export class AppSwipeDirective {
     private swipeTime?: number;
 
     /** Swipe emitter. */
-    @Output()
-    public swipe: EventEmitter<SWIPE_DIRECTION> =
-        new EventEmitter<SWIPE_DIRECTION>();
+    public readonly swipe: OutputEmitterRef<SWIPE_DIRECTION> = output<SWIPE_DIRECTION>();
 
     /**
      * On touch start.
@@ -63,9 +62,7 @@ export class AppSwipeDirective {
             && Math.abs(direction[0]) > 30 // Long enough
             && Math.abs(direction[0]) > Math.abs(direction[1] * 3)
         ) {
-            this.swipe.emit(
-                direction[0] > 0 ? SWIPE_DIRECTION.LEFT : SWIPE_DIRECTION.RIGHT,
-            );
+            this.swipe.emit(direction[0] > 0 ? SWIPE_DIRECTION.LEFT : SWIPE_DIRECTION.RIGHT);
         }
     }
 }
