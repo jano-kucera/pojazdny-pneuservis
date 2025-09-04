@@ -10,8 +10,8 @@ import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended"
 import rxjsAngularX from "eslint-plugin-rxjs-angular-x";
 import rxjsX from "eslint-plugin-rxjs-x";
 import sortPlugin from "eslint-plugin-sort";
-import sortClassMembers from "eslint-plugin-sort-class-members";
 import unusedImports from "eslint-plugin-unused-imports";
+import perfectionist from "eslint-plugin-perfectionist";
 import globals from "globals";
 import tseslint, { configs as tseslintConfigs } from "typescript-eslint";
 
@@ -40,6 +40,7 @@ export default tseslint.config(
             rxjsX.configs.recommended,
             jsdocPlugin.configs["flat/recommended-typescript"],
             sortPlugin.configs["flat/recommended"],
+            perfectionist.configs["recommended-natural"],
             eslintPluginPrettierRecommended,
         ],
         files: ["**/*.{js,ts}"],
@@ -56,7 +57,6 @@ export default tseslint.config(
             "@angular-eslint": pluginAngular,
             "no-null": noNullPlugin,
             "rxjs-angular-x": rxjsAngularX,
-            "sort-class-members": sortClassMembers,
             "unused-imports": unusedImports,
         },
         rules: {
@@ -88,6 +88,39 @@ export default tseslint.config(
                     preferReadonlySignalProperties: true,
                 },
             ],
+            "@typescript-eslint/switch-exhaustiveness-check": [
+                "warn",
+                {
+                    considerDefaultExhaustiveForUnions: true,
+                },
+            ],
+            "perfectionist/sort-classes": [
+                "warn",
+                {
+                    groups: [
+                        "static-property",
+                        "static-block",
+                        "static-method",
+                        "private-property",
+                        "private-function-property",
+                        "protected-property",
+                        "protected-function-property",
+                        "public-property",
+                        "public-function-property",
+                        "property",
+                        "constructor",
+                        ["get-method", "set-method"],
+                        "public-method",
+                        "protected-method",
+                        "private-method",
+                        "unknown",
+                    ],
+                    ignoreCallbackDependenciesPatterns: ["^computed", "^resource", "^toSignal"],
+                    type: "unsorted",
+                },
+            ],
+            "perfectionist/sort-imports": "off",
+            "perfectionist/sort-modules": "off",
             "@angular-eslint/relative-url-prefix": "warn",
             "@angular-eslint/use-pipe-transform-interface": "warn",
             "@typescript-eslint/consistent-type-assertions": [
@@ -275,88 +308,7 @@ export default tseslint.config(
                     variables: true,
                 },
             ],
-            "sort/string-enums": [
-                "warn",
-                { caseSensitive: false, natural: true },
-            ],
-            "sort/string-unions": [
-                "error",
-                { caseSensitive: false, natural: true },
-            ],
-            "sort/type-properties": "warn",
-            "sort-class-members/sort-class-members": [
-                "warn",
-                {
-                    accessorPairPositioning: "getThenSet",
-                    groups: {
-                        angular: [
-                            {
-                                name: "/ng.+/",
-                                type: "method",
-                            },
-                        ],
-                        "methods-private": [
-                            {
-                                accessibility: "private",
-                                type: "method",
-                            },
-                        ],
-                        "methods-protected": [
-                            {
-                                accessibility: "protected",
-                                type: "method",
-                            },
-                        ],
-                        "methods-public": [
-                            {
-                                accessibility: "public",
-                                type: "method",
-                            },
-                        ],
-                        "properties-private": [
-                            {
-                                accessibility: "private",
-                                type: "property",
-                            },
-                        ],
-                        "properties-protected": [
-                            {
-                                accessibility: "protected",
-                                type: "property",
-                            },
-                        ],
-                        "properties-public": [
-                            {
-                                accessibility: "public",
-                                type: "property",
-                            },
-                        ],
-                    },
-                    order: [
-                        "[static-properties]",
-                        "[static-methods]",
-                        "[conventional-private-properties]",
-                        "[properties-private]",
-                        "[properties-protected]",
-                        "[properties-public]",
-                        "constructor",
-                        "[angular]",
-                        "[accessor-pairs]",
-                        "[methods-public]",
-                        "[methods-protected]",
-                        "[methods-private]",
-                        "[everything-else]",
-                    ],
-                },
-            ],
-            "sort-keys": [
-                "warn",
-                "asc",
-                {
-                    caseSensitive: false,
-                    natural: true,
-                },
-            ],
+            "sort-keys": "off",
             "unused-imports/no-unused-imports": "warn",
         },
         settings: {

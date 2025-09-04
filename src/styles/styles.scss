@@ -24,7 +24,14 @@ html,
 body {
     height: 100%;
     scroll-behavior: smooth;
+    font-size: 16px;
     --mat-app-primary: #df541c;
+    --mat-sys-primary: #df541c;
+    --mat-button-filled-container-color: var(--mat-sys-primary);
+    --mat-button-filled-label-text-color: var(--mat-app-background-color);
+    --mat-tab-active-focus-indicator-color: var(--mat-sys-primary);
+    --mat-tab-active-indicator-color: var(--mat-sys-primary);
+    --mat-tab-label-text-size: 1rem;
 }
 
 body {
