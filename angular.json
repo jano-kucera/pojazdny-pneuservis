@@ -58,7 +58,7 @@
                     "options": {
                         "baseHref": "https://pojazdnypneuservismartin.sk/",
                         "branch": "gh-pages",
-                        "dir": "dist/pojazdny-pneuservis",
+                        "dir": "dist/pojazdny-pneuservis/browser",
                         "repo": "https://github.com/jano-kucera/pojazdny-pneuservis.git"
                     }
                 },
