@@ -275,9 +275,15 @@ export default tseslint.config(
                 },
             ],
             "no-useless-rename": "warn",
+            "@typescript-eslint/no-useless-default-assignment": ["warn", { allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: true }],
             "no-var": ["warn"],
             "prefer-const": "off",
-            "prettier/prettier": ["warn", {}],
+            "prettier/prettier": [
+                "warn",
+                {
+                    experimentalOperatorPosition: "start",
+                },
+            ],
             quotes: [
                 "warn",
                 "double",
@@ -369,6 +375,7 @@ export default tseslint.config(
                     bracketSameLine: true,
                     bracketSpacing: true,
                     endOfLine: "auto",
+                    experimentalOperatorPosition: "start",
                     htmlWhitespaceSensitivity: "strict",
                     parser: "angular",
                     quoteProps: "preserve",
