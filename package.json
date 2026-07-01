@@ -55,6 +55,9 @@
         "prettier-plugin-css-order": "^2.2.0",
         "prettier-plugin-multiline-arrays": "^4.1.10",
         "prettier-plugin-sort-json": "^4.2.0",
+        "stylelint": "^17.14.0",
+        "stylelint-config-standard-scss": "^17.0.0",
+        "stylelint-scss": "^7.2.0",
         "typescript": "~6.0.3",
         "typescript-eslint": "^8.62.1"
     },
@@ -75,7 +78,10 @@
     "scripts": {
         "build": "ng build",
         "deploy": "ng deploy",
-        "lint": "npx eslint \"**/*.{ts,html}\" --fix && prettier --write \"**/*.{json,scss}\" --log-level silent",
+        "lint:code": "ng lint",
+        "lint:code:fix": "npm run lint:code -- --fix",
+        "lint:styles": "npx stylelint **/*.scss",
+        "lint:styles:fix": "npm run lint:styles -- --fix",
         "ng": "ng",
         "start": "ng serve --open",
         "update-packages": "npx npm-check-updates --interactive --format group",

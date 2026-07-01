@@ -1,5 +1,6 @@
 nav {
     --mat-tab-header-label-text-size: 1.1em;
+
     background-color: var(--mat-app-background-color);
 }
 
@@ -16,7 +17,7 @@ mat-sidenav-container {
     display: none;
 }
 
-@media (max-width: 641px) {
+@media (width <= 641px) {
     mat-sidenav-container {
         display: block;
         position: fixed;
@@ -41,10 +42,7 @@ mat-sidenav-container {
             button {
                 display: block;
                 position: relative;
-                margin-top: 0.5em;
-                margin-right: auto;
-                margin-bottom: 0.5em;
-                margin-left: auto;
+                margin: 0.5em auto;
                 width: 100%;
                 color: var(--mat-sidenav-container-text-color);
                 font-size: 1.1em;

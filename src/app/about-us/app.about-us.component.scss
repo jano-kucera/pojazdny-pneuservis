@@ -9,6 +9,7 @@
         --mdc-filled-button-label-text-color: var(--mat-app-background-color);
         --mdc-filled-button-container-color: var(--mat-app-primary);
         --mdc-filled-button-container-height: 4em;
+
         min-width: min(100%, 600px);
         font-size: 1.1em;
         line-height: 1.5em;
@@ -28,7 +29,7 @@
         opacity: 0.9;
     }
 
-    @media (max-width: 641px) {
+    @media (width <= 641px) {
         flex-direction: column;
     }
 }
