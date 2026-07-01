@@ -1,28 +1,26 @@
 // @ts-check
-import pluginAngular from "@angular-eslint/eslint-plugin";
 import pluginJs from "@eslint/js";
-import angular from "angular-eslint";
-import * as importPlugin from "eslint-plugin-import";
-import jestPlugin from "eslint-plugin-jest";
+import { configs as angularConfigs } from "angular-eslint";
+import { defineConfig } from "eslint/config";
+import { importX } from "eslint-plugin-import-x";
 import jsdocPlugin from "eslint-plugin-jsdoc";
 import noNullPlugin from "eslint-plugin-no-null";
+import { configs as perfectionistConfigs } from "eslint-plugin-perfectionist";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 import rxjsAngularX from "eslint-plugin-rxjs-angular-x";
 import rxjsX from "eslint-plugin-rxjs-x";
 import sortPlugin from "eslint-plugin-sort";
 import unusedImports from "eslint-plugin-unused-imports";
-import perfectionist from "eslint-plugin-perfectionist";
 import globals from "globals";
-import tseslint, { configs as tseslintConfigs } from "typescript-eslint";
+import { configs as tseslintConfigs } from "typescript-eslint";
 
-export default tseslint.config(
+export default defineConfig(
     {
         ignores: [
             ".angular/",
             ".vscode/",
             "coverage/",
             "dist/",
-            "jest/",
             "node_modules/",
             "src/app/common/client-common.ts",
             "src/app/generated/",
@@ -32,15 +30,15 @@ export default tseslint.config(
     {
         extends: [
             pluginJs.configs.recommended,
-            angular.configs.tsRecommended,
+            angularConfigs.tsRecommended,
             tseslintConfigs.strictTypeChecked,
             tseslintConfigs.stylisticTypeChecked,
-            importPlugin.flatConfigs?.recommended,
-            importPlugin.flatConfigs?.typescript,
+            importX.flatConfigs.recommended,
+            importX.flatConfigs.typescript,
             rxjsX.configs.recommended,
             jsdocPlugin.configs["flat/recommended-typescript"],
             sortPlugin.configs["flat/recommended"],
-            perfectionist.configs["recommended-natural"],
+            perfectionistConfigs["recommended-natural"],
             eslintPluginPrettierRecommended,
         ],
         files: ["**/*.{js,ts}"],
@@ -54,7 +52,6 @@ export default tseslint.config(
             sourceType: "module",
         },
         plugins: {
-            "@angular-eslint": pluginAngular,
             "no-null": noNullPlugin,
             "rxjs-angular-x": rxjsAngularX,
             "unused-imports": unusedImports,
@@ -88,41 +85,9 @@ export default tseslint.config(
                     preferReadonlySignalProperties: true,
                 },
             ],
-            "@typescript-eslint/switch-exhaustiveness-check": [
-                "warn",
-                {
-                    considerDefaultExhaustiveForUnions: true,
-                },
-            ],
-            "perfectionist/sort-classes": [
-                "warn",
-                {
-                    groups: [
-                        "static-property",
-                        "static-block",
-                        "static-method",
-                        "private-property",
-                        "private-function-property",
-                        "protected-property",
-                        "protected-function-property",
-                        "public-property",
-                        "public-function-property",
-                        "property",
-                        "constructor",
-                        ["get-method", "set-method"],
-                        "public-method",
-                        "protected-method",
-                        "private-method",
-                        "unknown",
-                    ],
-                    ignoreCallbackDependenciesPatterns: ["^computed", "^resource", "^toSignal"],
-                    type: "unsorted",
-                },
-            ],
-            "perfectionist/sort-imports": "off",
-            "perfectionist/sort-modules": "off",
             "@angular-eslint/relative-url-prefix": "warn",
             "@angular-eslint/use-pipe-transform-interface": "warn",
+            "@typescript-eslint/consistent-generic-constructors": ["warn", "type-annotation"],
             "@typescript-eslint/consistent-type-assertions": [
                 "warn",
                 {
@@ -130,10 +95,7 @@ export default tseslint.config(
                     objectLiteralTypeAssertions: "never",
                 },
             ],
-            "@typescript-eslint/consistent-type-imports": [
-                "warn",
-                { prefer: "type-imports" },
-            ],
+            "@typescript-eslint/consistent-type-imports": ["warn", { prefer: "type-imports" }],
             "@typescript-eslint/explicit-function-return-type": "warn",
             "@typescript-eslint/explicit-member-accessibility": [
                 "warn",
@@ -148,10 +110,7 @@ export default tseslint.config(
             ],
             "@typescript-eslint/no-deprecated": "warn",
             "@typescript-eslint/no-empty-interface": "off",
-            "@typescript-eslint/no-empty-object-type": [
-                "error",
-                { allowInterfaces: "always" },
-            ],
+            "@typescript-eslint/no-empty-object-type": ["error", { allowInterfaces: "always" }],
             "@typescript-eslint/no-explicit-any": "off",
             "@typescript-eslint/no-extraneous-class": "off",
             "@typescript-eslint/no-floating-promises": [
@@ -165,6 +124,7 @@ export default tseslint.config(
             "@typescript-eslint/no-misused-spread": "off",
             "@typescript-eslint/no-unnecessary-boolean-literal-compare": "off",
             "@typescript-eslint/no-unnecessary-condition": "off",
+            "@typescript-eslint/no-unnecessary-type-conversion": "off",
             "@typescript-eslint/no-unnecessary-type-parameters": "warn",
             "@typescript-eslint/no-unsafe-argument": "off",
             "@typescript-eslint/no-unsafe-assignment": "off",
@@ -173,6 +133,12 @@ export default tseslint.config(
             "@typescript-eslint/no-unsafe-member-access": "off",
             "@typescript-eslint/no-unsafe-return": "off",
             "@typescript-eslint/no-unused-vars": "off",
+            "@typescript-eslint/no-useless-default-assignment": [
+                "warn",
+                {
+                    allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: true,
+                },
+            ],
             "@typescript-eslint/prefer-nullish-coalescing": "off",
             "@typescript-eslint/restrict-plus-operands": [
                 "warn",
@@ -182,6 +148,12 @@ export default tseslint.config(
                 },
             ],
             "@typescript-eslint/restrict-template-expressions": "off",
+            "@typescript-eslint/switch-exhaustiveness-check": [
+                "warn",
+                {
+                    considerDefaultExhaustiveForUnions: true,
+                },
+            ],
             "@typescript-eslint/typedef": [
                 "warn",
                 {
@@ -191,18 +163,12 @@ export default tseslint.config(
                     propertyDeclaration: true,
                 },
             ],
-            "@typescript-eslint/unbound-method": [
-                "error",
-                { ignoreStatic: true },
-            ],
+            "@typescript-eslint/unbound-method": ["error", { ignoreStatic: true }],
             camelcase: ["warn", {}],
             eqeqeq: ["warn", "smart"],
-            "import/no-cycle": "error",
+            "import-x/order": "off",
             indent: "off",
-            "jsdoc/check-tag-names": [
-                "warn",
-                { definedTags: ["jest-environment"] },
-            ],
+            "jsdoc/check-tag-names": "warn",
             "jsdoc/no-blank-blocks": "warn",
             "jsdoc/require-description-complete-sentence": ["warn", {}],
             "jsdoc/require-jsdoc": [
@@ -253,14 +219,45 @@ export default tseslint.config(
             "no-restricted-imports": [
                 "warn",
                 {
+                    importNames: ["CurrencyPipe", "DatePipe", "DecimalPipe"],
+                    message: "Please import from 'app/pipes' instead.",
+                    name: "@angular/common",
+                },
+                {
                     importNames: ["noop", "filter", "map"],
                     message: "Please import from 'rxjs' instead.",
+                    name: "lodash-es",
+                },
+                {
+                    importNames: ["round"],
+                    message: "Please import from 'app/utilities/numeric/round' instead.",
                     name: "lodash-es",
                 },
                 {
                     importNames: ["EventEmitter"],
                     message: "Please import { EventEmitter } from '@angular/core' instead.",
                     name: "stream",
+                },
+                {
+                    importNames: [
+                        "Subject",
+                        "Subscription",
+                        "Observable",
+                    ],
+                    message: "Please import from 'rxjs' instead.",
+                    name: "angular-slickgrid",
+                },
+                {
+                    importNames: [
+                        "isDefined",
+                    ],
+                    message: "Please import from 'app/utils' instead.",
+                    name: "angular-slickgrid",
+                },
+                {
+                    importNames: ["TranslatePipe"],
+                    message: "Please import from 'app/pipes/translate.pipe' instead. The NGX TranslatePipe is just a transitive dependency.",
+                    name: "@ngx-translate/core",
                 },
             ],
             "no-restricted-syntax": [
@@ -275,8 +272,34 @@ export default tseslint.config(
                 },
             ],
             "no-useless-rename": "warn",
-            "@typescript-eslint/no-useless-default-assignment": ["warn", { allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: true }],
             "no-var": ["warn"],
+            "perfectionist/sort-classes": [
+                "warn",
+                {
+                    groups: [
+                        "static-property",
+                        "static-block",
+                        "static-method",
+                        "private-property",
+                        "private-function-property",
+                        "protected-property",
+                        "protected-function-property",
+                        "public-property",
+                        "public-function-property",
+                        "property",
+                        "constructor",
+                        ["get-method", "set-method"],
+                        "public-method",
+                        "protected-method",
+                        "private-method",
+                        "unknown",
+                    ],
+                    ignoreCallbackDependenciesPatterns: ["^computed", "^resource", "^toSignal"],
+                    type: "unsorted",
+                },
+            ],
+            "perfectionist/sort-imports": "off",
+            "perfectionist/sort-modules": "off",
             "prefer-const": "off",
             "prettier/prettier": [
                 "warn",
@@ -317,28 +340,9 @@ export default tseslint.config(
             "sort-keys": "off",
             "unused-imports/no-unused-imports": "warn",
         },
-        settings: {
-            "import/resolver": {
-                node: true,
-                typescript: true,
-            },
-        },
     },
     {
-        extends: [
-            jestPlugin.configs["flat/recommended"],
-            jestPlugin.configs["flat/style"],
-        ],
-        files: ["**/*.spec.ts"],
-        rules: {
-            "no-null/no-null": "off",
-        },
-    },
-    {
-        extends: [
-            ...angular.configs.templateRecommended,
-            eslintPluginPrettierRecommended,
-        ],
+        extends: [...angularConfigs.templateRecommended, eslintPluginPrettierRecommended],
         files: ["**/*.html"],
         rules: {
             "@angular-eslint/template/alt-text": "warn",
@@ -355,6 +359,8 @@ export default tseslint.config(
                 "warn",
                 {
                     allowList: [
+                        "gridReference",
+                        "hasValue",
                         "isLoading",
                         "value",
                     ],
